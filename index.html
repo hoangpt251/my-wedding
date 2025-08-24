@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hoàng 💖 Xuân</title>
+  <link rel="icon" type="image/png" href="assets/picture/background/hy.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- simplyCountdown -->
+  <link rel="stylesheet" href="sources/simplyCountdown.theme.default.css" />
+  <script src="sources/simplyCountdown.min.js"></script>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="mainStyle.css">
+  <link rel="stylesheet" href="weddingCard.css">
+  <link rel="stylesheet" href="assets/font/font.css">
+ 
+</head>
+
+<body>
+  <!-- TRANG ĐẦU TIÊN - HERO -->
+  <section id="hero"
+    class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
+    <main>
+      <img src="assets/picture/background/le_thanh_hon.png" alt="Lễ Thành Hôn" style="border: none; margin: 30px;" width="350">
+      <h1>Trần Hoàng & Thanh Xuân</h1>
+      <p>Sẽ được bắt đầu sau:</p>
+      <div class="simply-countdown"></div>
+      <a href="#home" class="btn btn-lg mt-4 pulse-btn" onClick="enableScroll()">Xem lời mời</a>
+    </main>
+  </section>
+
+  <!-- THANH ĐIỀU HƯỚNG (TASK BAR) -> TÌM HIỂU THÊM -->
+  <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">My Wedding</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">My Wedding</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="#home">Sự kiện cưới</a>
+            <a class="nav-link" href="#info">Thiệp mời online</a>
+            <a class="nav-link" href="#story">Chuyện tình tôi</a>
+            <a class="nav-link" href="#gallery">Album ảnh cưới</a>
+            <a class="nav-link" href="#rsvp">Video ảnh cưới</a>
+            <a class="nav-link" href="#gifts">Mừng cưới online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="home">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <h2>Sự Kiện Cưới</h2>
+          <h3>Được tổ chức vào Chủ Nhật, ngày 02 tháng 11 năm 2025 <br>
+              (Tức ngày 13 tháng 09 âm lịch)</h3>
+          <p>Sự hiện diện của Quý Khách là niềm vinh dự của gia đình chúng tôi.<br>
+             Rất hân hạnh được đón tiếp!</p>
+        </div>
+      </div>
+
+      <div class="row couple">
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-8 text-end">
+              <h3>💕 Chú Rể 💕 <br>
+                  Phạm Trần Hoàng</h3>
+              <p>Gia Lộc - Chí Minh - Tp. Hải Phòng<br>
+                (Văn Tố - Tứ Kỳ - Hải Dương cũ)
+              </p>
+            </div>
+            <div class="col-4">
+              <img src="assets/picture/avatar/anh.jpg" alt="Trần Hoàng" class="img-responsive rounded-circle">
+            </div>
+          </div>
+        </div>
+
+        <span class="heart"><i class="bi bi-heart-fill"></i></span>
+
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-4">
+              <img src="assets/picture/avatar/em.jpg" alt="Thanh Xuân" class="img-responsive rounded-circle">
+            </div>
+            <div class="col-8">
+              <h3>💕 Cô Dâu 💕<br>
+                  Trình Thị Xuân</h3>
+              <p>Tràng Kênh - Cẩm Giang - Tp. Hải Phòng<br>
+                (Tt. Cẩm Giang - Cẩm Giàng - Hải Dương cũ)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THIỆP CƯỚI -->
+  <section id="wedding-invite" class="wedding-page">
+  <div class="cards-container">
+    <!-- Mobile selectors -->
+    <div class="card-selectors mobile-only">
+      <div class="card-selector active" data-target="card-trai">Thiệp cưới Nhà Trai</div>
+      <div class="card-selector" data-target="card-gai">Thiệp cưới Nhà Gái</div>
+    </div>
+
+    <!-- Card Nhà Trai -->
+    <div class="card-wrapper active" id="card-trai">
+      <div class="card-header desktop-only">Thiệp cưới Nhà Trai</div>
+      <div class="wedding-card">
+        <div class="card-image">
+          <img src="assets/picture/background/chu_hy.png" alt="Hoàng Xuân">
+        </div>  
+        <h3>TRÂN TRỌNG KÍNH MỜI</h3>
+        <p><b>Quý khách</b></p>
+        <p class="invite-text">Tới dự bữa cơm thân mật và <br>chung vui cùng gia đình chúng tôi !</p>
+        <div class="names">
+          <h2>Phạm Trần Hoàng</h2>
+            <div class="heart">
+              <img src="assets/picture/background/1f49e.gif" alt="heart">
+            </div>
+          <h2>Trình Thị Xuân</h2>
+        </div>
+        <p class="invite-location"> Được tổ chức:</p>
+        <div class="date-container">
+          <div class="date-top">CHỦ NHẬT</div>
+          <div class="date-middle">
+            <div class="date-side left">VÀO LÚC:<br><span>9h00</span></div>
+          <div class="date-center">02</div>
+            <div class="date-side right">THÁNG 11<br><span>2025</span></div>
+          </div>
+        </div>
+          <p class="lunar-text">(Nhằm ngày 13 tháng 09 năm Ất Tỵ)</p>
+          <p><span style="font-weight:bold; color:#000000; font-size:18px; font-family: Arial, sans-serif;">Tại: </span>
+             <span class="local-text">Hội trường nhà Trai</span></p>
+          <p class="location-text">Gia Lộc - Chí Minh - Tp. Hải Phòng</p>
+          <p class="location-text">(Văn Tố - Tứ Kỳ - Hải Dương cũ)</p>
+
+        <!-- Thông tin hai bên -->
+        <div class="family-info">
+          <div class="family-block">
+            <h4>Nhà Trai</h4>
+            <p class="parents">Bố: <span class="parents-name">Phạm Văn Nhị</span></p>
+            <p class="parents">Mẹ: <span class="parents-name">Trần Thị Thúy</span></p>
+          </div>
+          <div class="family-block">
+            <h4>Nhà Gái</h4>
+            <p class="parents">Bố: <span class="parents-name">Trình Văn Thiện</span></p>
+            <p class="parents">Mẹ: <span class="parents-name">Vũ Thị Son</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Nhà Gái -->
+    <div class="card-wrapper" id="card-gai">
+      <div class="card-header desktop-only">Thiệp cưới Nhà Gái</div>
+      <div class="wedding-card">
+        <div class="card-image">
+          <img src="assets/picture/background/chu_hy.png" alt="Hoàng Xuân">
+        </div>  
+        <h3>TRÂN TRỌNG KÍNH MỜI</h3>
+        <p><b>Quý khách</b></p>
+        <p class="invite-text">Tới dự bữa cơm thân mật và <br>chung vui cùng gia đình chúng tôi !</p>
+        <div class="names">
+          <h2>Trình Thị Xuân</h2>
+            <div class="heart">
+              <img src="assets/picture/background/1f49e.gif" alt="heart">
+            </div>
+          <h2>Phạm Trần Hoàng</h2>
+        </div>
+        <p class="invite-location"> Được tổ chức:</p>
+        <div class="date-container">
+          <div class="date-top">Chủ Nhật</div>
+          <div class="date-middle">
+            <div class="date-side left">VÀO LÚC:<br><span>10h00</span></div>
+          <div class="date-center">02</div>
+            <div class="date-side right">THÁNG 11<br><span>2025</span></div>
+          </div>
+        </div>
+        <p class="lunar-text">(Nhằm ngày 13 tháng 09 năm Ất Tỵ)</p>
+        <p><span style="font-weight:bold; color:#000000; font-size:18px; font-family: Arial, sans-serif;">Tại: </span>
+          <span class="local-text">Hội trường nhà Gái</span></p>
+        <p class="location-text">Tràng Kênh - Cẩm Giang - Tp. Hải Phòng</p>
+        <p class="location-text">(Tt. Cẩm Giang - Cẩm Giàng - Hải Dương cũ)</p>
+
+        <!-- Thông tin hai bên (ngược lại) -->
+        <div class="family-info">
+          <div class="family-block">
+            <h4>Nhà Gái</h4>
+            <p class="parents">Bố: <span class="parents-name">Trình Văn Thiện</span></p>
+            <p class="parents">Mẹ: <span class="parents-name">Vũ Thị Son</span></p>
+          </div>
+          <div class="family-block">
+            <h4>Nhà Trai</h4>
+            <p class="parents">Bố: <span class="parents-name">Phạm Văn Nhị</span></p>
+            <p class="parents">Mẹ: <span class="parents-name">Trần Thị Thúy</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- ĐỊA CHỈ TỔ CHỨC-->
+  <section id="info" class="info">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <h2>Địa điểm tổ chức</h2>
+          <p class="description">Quý Khách vui lòng tham khảo bản đồ đến sân khấu nhà Trai và nhà Gái ở bên dưới đây!</p>
+        </div>
+      </div>
+ 
+    <div class="row mt-5">
+      <!-- Nhà Trai --> 
+      <div class="col-md-6 mb-4">
+        <div class="card text-bg-light">
+          <div class="card-header text-center fw-bold">Nhà Trai</div>
+            <div class="card-body">
+              <p class="alamat text-center">
+                Địa chỉ: Gia Lộc - Chí Minh - Tp. Hải Phòng <br>
+                (Văn Tố - Tứ Kỳ - Hải Dương cũ)
+              </p>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2653.7051611355982!2d106.42967090291941!3d20.80447210082412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1svi!2s!4v1755008456318!5m2!1svi!2s" 
+                width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <div class="text-center mt-3">
+                <a href="https://maps.app.goo.gl/pFA5ApqU98jYZ3xT7" target="_blank" class="btn btn-light btn-sm">Xem bản đồ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Nhà Trai --> 
+      <div class="col-md-6 mb-4">
+        <div class="card text-bg-light">
+          <div class="card-header text-center fw-bold">Nhà Gái</div>
+            <div class="card-body">
+              <p class="alamat text-center">
+                Địa chỉ: Tràng Kênh - Cẩm Giang - Tp. Hải Phòng <br>
+                (Tt. Cẩm Giang - Cẩm Giàng - Hải Dương cũ)
+              </p>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1576.322050608635!2d106.19262200988011!3d20.95499484580937!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1svi!2s!4v1755003695655!5m2!1svi!2s"
+                width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <div class="text-center mt-3">
+                <a href="https://maps.app.goo.gl/bPobgvXoyfYW2UUA6" target="_blank" class="btn btn-light btn-sm">Xem bản đồ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÂU CHUYỆN CỦA CHÚNG TÔI -->  
+  <section id="story" class="story">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <span>Câu chuyện tình yêu của chúng tôi</span>
+          <h2>Câu chuyện của chúng tôi</h2>
+          <p>Trải qua một thời gian vừa đủ để tìm hiểu, chúng tôi đã quyết định tiến tới hôn nhân</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <ul class="timeline">
+            <li>
+              <div class="timeline-image" style="background-image: url(assets/picture/avatar/anh_va_em2.jpg);"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3>Chúng tôi quen nhau</h3>
+                  <span>23/10/2023</span>
+                </div>
+                <div class="timeline-body">
+                  <p>Câu chuyện như nào ????
+                  </p>
+                </div>
+              </div>
+
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-image" style="background-image: url(assets/picture/avatar/anh_va_em1.jpg);"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3>Lần gặp mặt đầu tiên</h3>
+                  <span>19/01/2024</span>
+                </div>
+                <div class="timeline-body">
+                  <p>Câu chuyện như nào ????
+                  </p>
+                </div>
+              </div>
+
+            </li>
+            <li>
+              <div class="timeline-image" style="background-image: url(assets/picture/avatar/anh_va_em1.jpg);"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3>Đính hôn</h3>
+                  <span>30/10/2025</span>
+                </div>
+                <div class="timeline-body">
+                  Viết tiếp câu chuyện vào đây ????
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THƯ VIỆN ẢNH -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <span>Album Ảnh</span>
+          <h2>Album Ảnh<h2>
+          <p>Những khoảnh khắc và những kỷ niệm chúng tôi đã có cùng nhau.</p>
+        </div>
+      </div>
+
+      <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
+        <div class="col mt-3">
+          <a href="assets/picture/gallery/img1.jpg" data-toggle="lightbox" data-caption="Hoàng & Xuân 1" data-gallery="mygallery">
+            <img src="assets/picture/gallery/img1.jpg" alt="Hoàng & Xuân 1" class="img-fluid w-100 rounded">
+          </a>
+        </div>
+        <div class="col mt-3">
+          <a href="assets/picture/gallery/img2.jpg" data-toggle="lightbox" data-caption="Hoàng & Xuân 2"
+            data-gallery="mygallery">
+            <img src="assets/picture/gallery/img2.jpg" alt="Hoàng & Xuân 2" class="img-fluid w-100 rounded">
+          </a>
+        </div>
+        <div class="col mt-3">
+          <a href="assets/picture/gallery/img3.jpg" data-toggle="lightbox" data-caption="Hoàng & Xuân 3"
+            data-gallery="mygallery">
+            <img src="assets/picture/gallery/img3.jpg" alt="Hoàng & Xuân 3" class="img-fluid w-100 rounded">
+          </a>
+        </div>
+        <div class="col mt-3">
+          <a href="assets/picture/gallery/img4.jpg" data-toggle="lightbox" data-caption="Hoàng & Xuân 4"
+            data-gallery="mygallery">
+            <img src="assets/picture/gallery/img4.jpg" alt="Hoàng & Xuân 4" class="img-fluid w-100 rounded">
+          </a>
+        </div>
+        <div class="col mt-3">
+          <a href="assets/picture/gallery/img5.jpg" data-toggle="lightbox" data-caption="Hoàng & Xuân 5"
+            data-gallery="mygallery">
+            <img src="assets/picture/gallery/img5.jpg" alt="Hoàng & Xuân 5" class="img-fluid w-100 rounded">
+          </a>
+        </div>
+        <div class="col mt-3">
+          <a href="assets/picture/gallery/img6.jpg" data-toggle="lightbox" data-caption="Hoàng & Xuân 6"
+            data-gallery="mygallery">
+            <img src="assets/picture/gallery/img6.jpg" alt="Hoàng & Xuân 6" class="img-fluid w-100 rounded">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- MỪNG CƯỚI ONLINE -->
+  <section id="gifts" class="gifts">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <!--span>expression of love</span-->
+          <h2>MỪNG CƯỚI ONLINE</h2>
+          <p>♥ Vợ Chồng chân thành cảm ơn tình cảm của Quý Khách ♥.
+          </p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center text-center">
+        <div class="col-md-6">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="fw-bold">Mừng cưới đến Chú Rể</div>
+             </li>
+            <li class="list-group-item">
+              <img src="assets/picture/qrCode/hoangpt.jpg" alt="QR Code" class="img-thumbnail" width="200">
+              <div class="fw-normal">STK: 0904075097<br>
+                                   Tên: Pham Tran Hoang<br>
+                                   Ngân hàng: MB
+            </li>
+          </ul>
+        </div>
+
+      <div class="col-md-6">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="fw-bold">Mừng cưới đến Cô Dâu</div>
+            </li>
+            <li class="list-group-item">
+              <!--div class="fw-bold">Mừng cưới chú rể</div-->
+              <img src="assets/picture/qrCode/xuantt.jpg" alt="QR Code" class="img-thumbnail" width="200">
+              <div class="fw-normal">STK: 9500101144009<br>
+                                   Tên: Trinh Thi Xuan<br>
+                                   Ngân hàng: MB
+              </div>
+            </li>
+          </ul>
+        </div>    
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <large class="block">💖💖💖 SỰ HIỆN DIỆN CỦA QUÝ KHÁCH LÀ NIỀM VINH DỰ ĐƯỢC ĐÓN TIẾP CỦA CHÚNG TÔI 💖💖💖<br>
+          💕💕💕💕💕💕💕💕💕💕💕💕💕💕💕💕💕
+          </large>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="audio-container">
+    <audio id="song" autoplay loop>
+      <source src="assets/music/music.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="audio-icon-wrapper" style="display: none;">
+      <i class="bi bi-disc"></i>
+    </div>
+  </div>
+
+
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous">
+  </script>
+
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js">
+  </script>
+
+  <script>
+    simplyCountdown('.simply-countdown', {
+      year: 2025, // required
+      month: 11, // required
+      day: 2, // required
+      hours: 10, // Default is 0 [0-23] integer
+      words: { //words displayed into the countdown
+        days: { singular: 'Ngày', plural: 'Ngày' },
+        hours: { singular: 'Giờ', plural: 'Giờ' },
+        minutes: { singular: 'Phút', plural: 'Phút' },
+        seconds: { singular: 'Giây', plural: 'Giây' }
+      },
+    });
+  </script>
+
+  <script>
+    const stickyTop = document.querySelector('.sticky-top');
+    const offcanvas = document.querySelector('.offcanvas');
+
+    offcanvas.addEventListener('show.bs.offcanvas', function () {
+      stickyTop.style.overflow = 'visible';
+    });
+
+    offcanvas.addEventListener('hidden.bs.offcanvas', function () {
+      stickyTop.style.overflow = 'hidden';
+    });
+  </script>
+
+  <script>
+    const rootElement = document.querySelector(":root");
+    const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+    const audioIcon = document.querySelector('.audio-icon-wrapper i');
+    const song = document.querySelector('#song');
+    let isPlaying = false;
+
+    function disableScroll() {
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+      window.onscroll = function () {
+        window.scrollTo(scrollTop, scrollLeft);
+      }
+      rootElement.style.scrollBehavior = 'auto';
+    }
+
+    function enableScroll() {
+      window.onscroll = function () { }
+      rootElement.style.scrollBehavior = 'smooth';
+      // localStorage.setItem('opened', 'true');
+      playAudio(); // Kích hoạt lại  --> Cấm xóa
+    }
+
+    function playAudio() {
+      song.volume = 0.6;
+      audioIconWrapper.style.display = 'flex';
+      song.play();
+      isPlaying = true;
+    }
+
+    audioIconWrapper.onclick = function () {
+      if (isPlaying) {
+        song.pause();
+        audioIcon.classList.remove('bi-disc');
+        audioIcon.classList.add('bi-pause-circle');
+      } else {
+        song.play();
+        audioIcon.classList.add('bi-disc');
+        audioIcon.classList.remove('bi-pause-circle');
+      }
+      isPlaying = !isPlaying;
+    }
+
+    // if (!localStorage.getItem('opened')) {
+    //   disableScroll();
+    // }
+    disableScroll();  //cần phải kích hoạt lại --> Cấm xóa
+  </script>
+
+  <!--Scrip này để xử lý cho đoạn thiệp cưới card -->
+
+  <!--script>
+    function showCard(type) {
+      document.querySelector('.card-trai').classList.remove('active');
+      document.querySelector('.card-gai').classList.remove('active');
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      if (type === 'trai') {
+        document.querySelector('.card-trai').classList.add('active');
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+      } else {
+        document.querySelector('.card-gai').classList.add('active');
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+      }
+    }
+  </script-->
+
+  <script>
+    // Chuyển card khi bấm selector trên mobile
+    document.querySelectorAll('.card-selector').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.card-selector').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        document.querySelectorAll('.card-wrapper').forEach(c => c.classList.remove('active'));
+        document.getElementById(btn.dataset.target).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
