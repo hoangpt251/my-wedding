@@ -1,0 +1,978 @@
+/* === NHỮNG NGUỒN IMPORT TỪ BÊN NGOÀI, PHẦN CÀI ĐẶT DÙNG CHUNG === */
+@import url('assets/font/font.css');
+@import url('keyframes.css');
+
+:root {
+  --pink: #f14e95;
+  --bg: #0a0a0a;
+  --shadow: 0 2px 2px rgb(0 0 0 / 0.5);
+}
+body {
+  font-size: 1.2rem;
+  font-family: 'Work Sans', sans-serif;
+  min-height: 4000px;
+}
+/*Cài đặt các Heading dùng chung cho toàn website*/
+/*sửa lại các heading này theo đúng mục đích, thêm vào b, p, a*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: main-font;
+  color: var(--heading-color);
+  margin: 0 0 1em;
+}
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+/* === KẾT THÚC PHẦN CÀI ĐẶT DÙNG CHUNG === */
+
+/* 1. STYLE CHO PHẦN TRANG ĐẦU TIÊN (HERO PAGE) */
+/* Trang đầu tiên */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/picture/background/bgrd2.jpg);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  /* filter: grayscale(); */
+}
+.hero {
+  position: relative;
+  min-height: 100vh;
+}
+.hero h1,
+.hero h4,
+.hero p {
+text-shadow: var(--shadow);
+}
+.hero h1 {
+  font-family: 'UVF-Filxgirl', cursive;
+  font-size: 9rem;
+  color: #f14e95;
+  text-shadow: var(--shadow);
+  font-weight: bold;
+}
+.hero h4 {
+  font-size: 1.6rem;
+}
+.hero p {
+  font-size: 1.8rem;
+  color: #f14e95;
+}
+.hero a {
+  color: var(--pink);
+  background-color: white;
+  box-shadow: var(--shadow);
+  font-size: medium;
+}
+.hero a:hover {
+  background-color: var(--pink);
+  color: white;
+}
+
+/*Phần countdown*/
+.simply-countdown {
+  overflow: hidden;
+  display: table;
+  margin: auto;
+}
+.simply-countdown > .simply-section {
+  width: 50px;
+  height: 50px;
+  padding: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  margin: 10px;
+  background: var(--pink);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 50%;
+}
+.simply-countdown > .simply-section .simply-amount,
+.simply-countdown > .simply-section .simply-word {
+  display: block;
+  text-align: center;
+}
+.simply-countdown > .simply-section .simply-amount {
+  font-size: 2.5rem;
+}
+
+/*Phần menu*/
+.mynavbar {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(4px);
+}
+.mynavbar .offcanvas {
+  height: 100vh;
+}
+.mynavbar .navbar-brand,
+.mynavbar .offcanvas-title {
+  font-family: 'Sacramento', cursive;
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+.mynavbar .nav-link {
+  text-transform: uppercase; /*Đây biến chữ thường thành chữ in hoa*/
+}
+/* === KẾT THÚC STYLE PHẦN HERO PAGE === */
+
+/* 2. STYLE CHO PHẦN SỰ KIỆN (EVENTS) */
+/*h2 đang được setup chung cho cả home, info, story, gifts*/
+/*.home h2,
+.info h2,
+.story h2,
+.gifts h2 {
+  color: var(--pink);
+  font-family: 'West-Condensed', fantasy;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-shadow: var(--shadow);
+}*/
+.home h2 {
+  color: var(--pink);
+  font-family: 'West-Condensed', fantasy;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-shadow: var(--shadow);
+}
+.home h3 {
+  color: #444;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.home p {
+  font-family: 'ED-Lavonia', sans-serif;
+  font-size: 1.5rem;
+  color: #666;
+}
+.home .couple {
+  margin-top: 100px;
+}
+.home .couple h3 {
+  font-family: 'ED-Piedmont', serif;
+  font-size: 2.5rem;
+  color: var(--pink);
+  text-shadow: var(--shadow);
+}
+.home .couple p {
+  font-family: 'Autogate-Stamp', sans-serif;
+  font-size: 1.5rem;
+  color: #d10cf8;
+  text-shadow: var(--shadow);
+}
+.home .couple img {
+  width: 100%;
+}
+/*Khung hình tròn*/
+.home .heart {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(250, 227, 255);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(65px);
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;     /*tránh ảnh tràn ra ngoài*/
+}
+/* Wrapper cho ảnh */
+.heart-inner {
+  width: 50px; /*Chỉnh kích thước ảnh*/
+  height: auto;
+  position: relative;
+  margin-top: 5px;
+  margin-left: -6px;
+}
+/* @media (max-width: 1200px) {
+  .home .heart {
+    transform: translateX(-50%) translateY(45px);
+  }
+} */
+/* === KẾT THÚC STYLE PHẦN SỰ KIỆN === */
+
+/* 3. STYLE CHO PHẦN THIỆP CƯỚI (WEDDING CARD) */
+/*Issue: Hiển thị ảnh nền trên page*/
+.wedding-page {
+  position: relative;
+  background-image: url("assets/picture/background/hoang-xuan-4.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;   /*đảm bảo full màn hình */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  overflow: hidden;
+  isolation: isolate; /* tạo stacking context riêng, an toàn cho z-index */
+}
+/* Overlay mờ phủ lên background */
+.wedding-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.60);  /* nền trắng mờ */
+  z-index: 0;  /* đảm bảo nằm dưới card */
+}
+/* Nội dung card hiển thị trên overlay */
+.wedding-page .container {
+  position: relative;
+  z-index: 1;
+}
+.wedding-card {
+  position: relative;
+  z-index: 2;
+  border: 1px solid #d3a27f;
+  border-radius: 8px; /* Chỉnh độ bo góc, căn sửa lại theo ý */
+  background: rgba(250, 229, 253, 0.8); /* Chỉnh tham số 0.95 để làm trong hơn */
+  padding: 20px; /* Điều chỉnh tham số này để xem thay đổi */
+  text-align: center;
+  width: 400px;   /* fix chiều rộng */
+  height: 730px;  /* fix chiều cao */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+.wedding-card h3 {
+  margin: 5px 0;
+  color: rgb(22, 22, 22);
+  font-family: 'West-Condensed', cursive;
+  font-size: 22px;
+}
+.wedding-card b {
+  margin: 0px 0;
+  color: #962e2e;
+  font-family: 'Wagon-ExtraLight', cursive;
+  font-size: 20px;
+  font-weight: 900;
+}
+.wedding-card .invite-text {
+  margin: 0px 0;
+  color: #000000;
+  font-family: 'Hello-Honey', cursive;
+  font-size: 22px;
+  margin-top: -15px;
+  margin-bottom: 0px;
+  line-height: 1;
+}
+.wedding-card .invite-location {
+  margin: 0px 0;
+  color: #000000;
+  font-family: 'Fraunces-Black', cursive;
+  font-size: 18px;
+  margin-top: -10px;
+  margin-bottom: -5px;
+  line-height: 1;
+  text-decoration: underline;
+}
+/* Card */
+.card-wrapper {
+  width: 100%;
+  text-align: center;
+}
+/* Container */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 400px));
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+}
+/* Header (desktop) */
+.card-header {
+  position: relative;
+  z-index: 2;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: rgba(248, 245, 194, 0.8);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  font-family: West-Condensed, serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+/* Mobile selectors */
+.card-selectors {
+  position: relative;
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.card-selector {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  background: #f9f5f0;
+  cursor: pointer;
+  transition: all 0.3s ease;  /* hiệu ứng mượt */
+  animation: pulse 2s infinite;
+}
+.card-selector:hover {
+  background: #d3a27f;       /* đổi nền */
+  color: #fff;               /* đổi màu chữ */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* thêm bóng */
+  transform: translateY(-3px); /* nổi lên nhẹ */
+}
+.card-selector.active {
+  background: linear-gradient(135deg, #d83a2e, #f59e0b);
+  color: #fff;
+  font-weight: bold;
+  transform: scale(1.05); /* hơi to lên */
+}
+.card-image {
+  margin: 0px 0;
+  text-align: center;
+  margin-top: -3.5px;
+  margin-bottom: 8px;
+}
+.card-image img {
+  max-width: 45%;   /* co vừa với chiều rộng card */
+  max-height: 80px; /* chỉnh chiều cao mong muốn */
+  object-fit: cover; /* cắt ảnh để vừa khung, không méo */
+  border-radius: 6px; /* bo góc giống card */
+}
+/* Contact info */
+.contact-info {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;     /*Điều chỉnh khoảng cách ở đây*/
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  /*padding-left: 20px;  /*dịch về bên trái, hãy điều chỉnh lại*/
+}
+.contact-info span {
+  margin-right: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.contact-icon {
+  font-size: 20px;
+  color: rgb(231, 18, 238);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s;
+  animation: pulse-shake 2s infinite ease-in-out; /* thêm hiệu ứng */
+}
+.contact-icon:hover {
+  color: #ff4500;
+  transform: scale(1.3);
+}
+.names {
+  text-align: center;
+  margin: 20px 0;
+}
+/* Names */
+.names h2 {
+  margin: 5px 0;
+  color: #ff0000;
+  -webkit-text-stroke: #000000;
+  font-family: 'FzManstein', cursive;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: -5px;
+}
+
+/* Heart */
+.heart img {
+  width: 40px;   /* chỉnh kích thước ảnh */
+  height: auto;
+  margin: 2px 0;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+/* Date-Container */
+.date-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Dòng trên (CHỦ NHẬT) */
+.date-top {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: -10px;
+  margin-bottom: -20px;
+  font-family: 'PoetsenOne', serif;
+  text-transform: uppercase;
+  color: #b22222;
+}
+
+/* Hàng giữa */
+.date-middle {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 25px; /* khoảng cách giữa số và chữ */
+  min-height: 60px;
+}
+
+/* Bên trái & phải */
+.date-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* căn chữ giữa chiều cao */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  padding: 0 12px;
+  white-space: nowrap;
+}
+
+.date-side span {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Gạch phân cách dọc */
+.date-side.left {
+  border-right: 2.0px solid #000000;
+}
+.date-side.right {
+  border-left: 2.0px solid #000000;
+}
+
+/* Ngày ở giữa */
+.date-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 45px;
+  font-weight: 900;
+  color: #b22222;
+  margin: 0 10px;
+  line-height: 1;
+  animation: shake 1.2s infinite; /* hiệu ứng rung */
+}
+
+.lunar-text {
+  margin-top: -20px;
+  margin-bottom: 0px;
+  font-family: 'VLFADILLA', serif;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.local-text {
+  color: #962e2e;
+  font-family: 'PoetsenOne', cursive;
+  font-size: 20px;
+}
+
+.location-text {
+  margin-top: -5px;
+  margin-bottom: 12px;
+  line-height: 1;
+  font-family: 'Indulge-Script', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Family info */
+.family-info {
+  margin-top: 0px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+}
+.family-block {
+  flex: 1;
+  text-align: center;
+}
+.family-block h4 {
+  margin-top: -5px;
+  margin-bottom: 0px;
+  font-family: 'PoetsenOne', cursive;
+  font-size: 16px;
+  font-weight: bold;
+}
+.family-block .parents{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: -5px;
+}
+.family-block .parents-name {
+  margin: 2px 0;
+  margin-bottom: -5px;
+  font-family: 'VLFADILLA', sans-serif;
+  font-size: 23px;
+  font-weight: 100;
+  color: #b22222;
+}
+/* === KẾT THÚC STYLE PHẦN THIỆP CƯỚI === */
+
+/* 4. STYLE CHO PHẦN CÂU CHUYỆN (STORY) */
+.story {
+  position: relative;
+  background-image: url("assets/picture/background/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+  isolation: isolate; /* tạo stacking context riêng, an toàn cho z-index */
+}
+/* Overlay mờ phủ lên background */
+.story::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.60);  /* nền trắng mờ */
+  z-index: 0;  /* đảm bảo nằm dưới card */
+}
+/* phần nội dung nổi lên */
+.story .container {
+  position: relative;
+  z-index: 1;
+  color: #000; /* chữ rõ ràng */
+}
+.story .sub-topic {
+  font-family: 'HILLDA', serif;
+  color: #000000;
+  font-size: 15px;
+}
+.story h3 {
+  font-family: 'ED-Piedmont', serif;
+  color: #d10cf8;
+  font-size: 25px;
+  text-decoration: underline;
+  margin-top: -10px;
+}
+.story p {
+  font-family: 'HILLDA', serif;
+  color: #0e550e;
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: -3px;
+}
+.story span {
+  font-family: 'Frauen-Roman', cursive;
+  font-size: 12px;
+  font-weight: bolder;
+  margin-bottom: 0px;
+}
+.timeline {
+  list-style: none;
+  padding: 1.4rem 0;
+  margin-top: 1rem;
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 1px;
+  background-color: #ccc;
+  left: 50%;
+}
+.timeline li {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.timeline li::before,
+.timeline li::after {
+  content: '';
+  display: table;
+}
+.timeline li::after {
+  clear: both;
+}
+.timeline li .timeline-image {
+  width: 160px;
+  height: 160px;
+  background-color: #ccc;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.timeline li .timeline-panel {
+  width: 40%;
+  float: left;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  position: relative;
+  border-radius: 8px;
+  background-color: #e8fff7;
+}
+.timeline li .timeline-panel::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  border-top: 15px solid transparent;
+  border-left: 15px solid #ccc;
+  border-right: 0 solid #ccc;
+  border-bottom: 15px solid transparent;
+  top: 80px;
+  right: -15px;
+}
+.timeline li .timeline-panel::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 14px solid transparent;
+  top: 81px;
+  right: -13px;
+}
+.timeline li.timeline-inverted .timeline-panel {
+  float: right;
+}
+.timeline li.timeline-inverted .timeline-panel::before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+.timeline li.timeline-inverted .timeline-panel::after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -13px;
+  right: auto;
+}
+/* === KẾT THÚC STYLE PHẦN CÂU CHUYỆN === */
+
+/* === 5. STYLE CHO PHẦN ALBUM ẢNH ===*/
+.gallery {
+    margin-top: 40px;
+    align-items: center;
+    text-align: center;
+}
+
+.gallery .container {
+    max-width: 800px; /*có thể chỉnh lại tùy theo thiết kế*/
+    margin: 0 auto;
+}
+
+.gallery h2,
+.video-section h2 {
+    color: #f14e95;
+    margin-bottom: 0.25rem;
+    font-family: 'West-Condensed', fantasy;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 0 2px 2px rgb(0 0 0 / 0.5);
+}
+.gallery p,
+.video-section p {
+    color: #555;
+    font-family: 'HILLDA', serif;
+    color: black;
+    font-size: 15px;
+}
+
+.album-slide {
+    overflow: hidden;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.album img {
+    aspect-ratio: 1/1.5;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center 10%;
+    border-radius: 15px;
+}
+.album-item img{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    /* border-radius: 12px; */
+    object-position: center 30%;
+}
+.album-slide .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 50%;
+    height: auto;
+}
+.album-slide .swiper-slide img {
+    display: block;
+    width: 100%;
+}
+/* === KẾT THÚC STYLE PHẦN ALBUM ẢNH === */
+
+/* === 6. STYLE CHO PHẦN VIDEO === */
+.video-section {
+  padding: 75px 20px;
+  text-align: center;
+  background-color: #fff; /* hoặc #f9f9f9 nếu muốn nổi bật */
+}
+.video-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* Đảm bảo video responsive */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+/* === KẾT THÚC STYLE PHẦN VIDEO === */
+
+/* === 7. STYLE CHO PHẦN LỜI CHÚC === */
+
+/* === KẾT THÚC STYLE PHẦN LỜI CHÚC === */
+
+/* === 8. STYLE CHO PHẦN MỪNG CƯỚI === */
+#gifts.gifts.wedding-box{
+  min-height: 50vh; /*100vh*/
+}
+.gifts .wedding-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.gifts .overlay {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  padding: 230px 30px;
+  width: 90%;
+  max-width: 800px; /* tăng lên từ 600px */
+  color: #8b5e3c;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  /*Viết thêm đoạn này*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+}
+.gifts .overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("assets/picture/background/hoang-xuan-1.JPG"); /* ảnh nền trong khung */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35; /* ảnh nền mờ */
+  z-index: 0;
+}
+.gifts .gift-box-bottom {
+  position: absolute;
+  bottom: 30px; /* đẩy sát gần đáy overlay */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.gifts .gift-icon {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  cursor: pointer;
+  animation: shake 1.5s infinite;
+  position: relative;
+  z-index: 2;
+}
+.gifts .gift-message {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #d63384;
+  font-weight: bold;
+  font-family: 'HILLDA', serif;
+}
+.gifts .qr-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 250px;  /*Co nhỏ khung lại*/
+  margin: 0 auto;    /*Căn giữa trong cột*/
+  text-align: center;
+}
+.qr-card img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto; /*Căn giữa hình ảnh trong card*/
+}
+.qr-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 0 5px; /* nhỏ padding trái/phải nếu cần */
+  width: 100%;
+  max-width: 250px;
+  flex-wrap: nowrap;
+}
+.qr-buttons .btn {
+  flex: 1;
+  width: calc(50% - 5px);
+  font-size: 15px;
+  min-width: 0;
+  transition: all 0.3s ease;
+}
+.qr-buttons .btn:hover {
+  background-color: #007bff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.qr-row-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 16px; /* 👈 Chỉnh khoảng cách giữa 2 QR card tại đây */
+  flex-wrap: wrap;
+}
+.gifts h4 {
+  font-size: 25px;
+  color: #0e550e;
+  margin-top: 10px;
+}
+.gifts h6 {
+  font-size: 16px;
+  color:#4447f7;
+  margin-top: 0px;
+  text-decoration: underline;
+}
+.gifts .p1 {
+  font-size: 15px;
+  color:#8b5e3c;
+  margin-top: 0px;
+}
+#gifts {
+  margin-bottom: 40px;
+}
+#giftModal .modal-dialog {
+  max-width: 570px; /* tùy chỉnh độ rộng khung ngoài cùng */
+}
+
+@media (max-width: 768px) {
+  /*.qr-buttons {
+    flex-direction: column;
+  }*/
+  #giftModal .modal-dialog {
+    margin: 1rem; /* giữ responsive trên mobile */
+  } 
+}
+/* === KẾT THÚC STYLE PHẦN MỪNG CƯỚI === */
+
+/* === 9. PHẦN FOOTER === */
+footer {
+  padding: 1.0rem; /*3rem*/
+  background-color: var(--pink);
+  color: white;
+}
+footer a {
+  color: var(--bg);
+  font-weight: bold;
+  text-decoration: none;
+}
+footer a:hover {
+  color: white;
+}
+footer li {
+  list-style: none;
+  display: inline;
+  margin: 0.5rem;
+}
+/* === KẾT THÚC STYLE PHẦN FOOTER === */
+
+/* CÁC PHẦN CÀI ĐẶT PHỤ VÀ RESPONSIVE */
+/*Cho phần nút bấm audio*/
+.audio-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  font-size: 4rem;
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2rem;
+  cursor: pointer;
+  color: white;
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  animation: rotating 4s linear infinite;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*Cho phần nút bấm hiển thị đẹp mắt hơn*/
+.pulse-btn {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  display: inline-block;
+  background: #c6ff6b;   /* nền đỏ đô */
+  color: #000000;           /* chữ trắng */
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: pulse 1s infinite; /* chạy hiệu ứng */
+}
+.pulse-btn:hover {
+  background: #b22222; /* đậm hơn khi hover */
+  transform: scale(1.1);
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(216, 58, 46, 0.6);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(216, 58, 46, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(216, 58, 46, 0);
+  }
+}

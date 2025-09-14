@@ -1,0 +1,165 @@
+/*RESPONSIVE CỦA PHẦN HOME*/
+@media (max-width: 1200px) {
+  .home .heart {
+    transform: translateX(-50%) translateY(45px);
+  }
+}
+
+/*RESPONSIVE --> Đang lấy cho cả page*/
+/* laptop */
+@media (max-width: 992px) {
+  html {
+    font-size: 75%;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 65px;
+  }
+
+  .home .heart {
+    display: none;
+  }
+
+  .timeline::before {
+    left: 60px;
+  }
+
+  .timeline li .timeline-image {
+    left: 15px;
+    margin-left: 45px;
+    top: 16px;
+  }
+
+  .timeline li .timeline-panel {
+    width: calc((100% - 200px));
+    float: right;
+  }
+
+  .timeline li .timeline-panel::before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+
+  .timeline li .timeline-panel::after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -13px;
+    right: auto;
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 60px;
+    margin: 5px;
+  }
+
+  .mynavbar .nav-link {
+    font-size: 2rem;
+    text-align: right;
+  }
+
+  .sticky-top {
+    overflow: hidden;
+  }
+
+  .timeline li .timeline-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* mobile phone */
+@media (max-width: 576px) {
+  html {
+    font-size: 60%;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 45px;
+    margin: 3px;
+  }
+
+  .timeline li .timeline-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .timeline li .timeline-panel {
+    width: 65%;
+    transform: translateX(-20px);
+  }
+
+  .timeline li .timeline-panel::before {
+    top: 30px;
+  }
+
+  .timeline li .timeline-panel::after {
+    top: 31px;
+  }
+}
+
+/*RESPONSIVE CHO PHẦN WEDDING CARD --> Có thể sẽ bị xung đột với phần trên, kiểm lại*/
+/* =================== MOBILE =================== */
+@media (max-width: 840px) {
+  .cards-container {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: flex;
+    width: 400px;   /* giữ cố định 400px */
+    margin: 0 auto 10px;
+  }
+
+  .card-wrapper {
+    display: none;
+    width: 400px;   /* giữ cố định 400px */
+    margin: 0 auto;
+  }
+  .card-wrapper.active {
+    display: block;
+  }
+
+  /* GIỮ NGUYÊN cấu trúc 2 cột Nhà Trai / Nhà Gái */
+  .family-info {
+    flex-direction: row;  /* ép về hàng ngang */
+    gap: 40px;
+  }
+}
+
+/*Một phần responsitive nữa*/
+@media only screen and (min-width: 540px) {}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 768px) {
+    .bg-top-left, .bg-bottom-right {
+        max-width: 300px;
+    }
+    .about-container {
+        grid-template-columns: repeat(2,1fr);
+    }
+    #time-line .section-title{
+        font-size: 54px;
+    }
+    .album-slide .swiper-slide {
+        width: 30%;
+    }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 1024px) {}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 1280px) {}

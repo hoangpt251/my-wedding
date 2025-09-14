@@ -1,0 +1,30 @@
+/*KEYFRAMS CỦA WEDDING CARD*//* Keyframes tạo rung */
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-1px, 0) rotate(-2deg); }
+  40% { transform: translate(1px, 0) rotate(2deg); }
+  60% { transform: translate(-1px, 0) rotate(-1deg); }
+  80% { transform: translate(1px, 0) rotate(1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Tạo hiệu ứng rung cho nút nhấn */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(216, 58, 46, 0.6); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(216, 58, 46, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(216, 58, 46, 0); }
+}
+/* Keyframes: kết hợp rung và phóng to (điện thoại và map)*/
+@keyframes pulse-shake {
+  0%   { transform: scale(1) rotate(0deg); }
+  10%  { transform: scale(1.1) rotate(-3deg); }
+  20%  { transform: scale(1.1) rotate(3deg); }
+  30%  { transform: scale(1.2) rotate(-2deg); }
+  40%  { transform: scale(1.2) rotate(2deg); }
+  50%  { transform: scale(1.1) rotate(0deg); }
+  60%  { transform: scale(1.2) rotate(-3deg); }
+  70%  { transform: scale(1.2) rotate(3deg); }
+  80%  { transform: scale(1.1) rotate(-2deg); }
+  90%  { transform: scale(1.05) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}

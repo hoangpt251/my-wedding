@@ -1,0 +1,115 @@
+/*Tất cả font chữ dùng trong website*/
+@font-face {
+    font-family: 'Autogate-Stamp';
+    src: url('../../assets/font/Autogate-Stamp.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ED-Lavonia';
+    src: url('../../assets/font/ED-Lavonia.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ED-Piedmont';
+    src: url('../../assets/font/ED-Piedmont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Frauen-Roman';
+    src: url('../../assets/font/Frauen-Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Frauen-Script'; /*Cân nhắc xem có nên giữ lại font này không, trông không đẹp lắm*/
+    src: url('../../assets/font/Frauen-Script.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fraunces-Black';
+    src: url('../../assets/font/Fraunces-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+@font-face {
+    font-family: 'FzManstein';
+    src: url('../../assets/font/FzManstein.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*Font FzWagon-LightItalic.otf đang không dùng --> Xóa*/
+
+@font-face {
+    font-family: 'Hello-Honey';
+    src: url('../../assets/font/Hello-Honey.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HILLDA';
+    src: url('../../assets/font/HILLDA.OTF') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+@font-face {
+    font-family: 'Indulge-Script';
+    src: url('../../assets/font/Indulge-Script.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+/*Font này còn chưa dùng*/
+@font-face {
+    font-family: 'PHOBIA';
+    src: url('../../assets/font/PHOBIA.OTF') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PoetsenOne';
+    src: url('../../assets/font/PoetsenOne.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UVF-Filxgirl';
+    src: url('../../assets/font/UVF-Filxgirl.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Không đẹp*/
+@font-face {
+    font-family: 'VLFADILLA';
+    src: url('../../assets/font/VLFADILLA.OTF') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Wagon-ExtraLight';
+    src: url('../../assets/font/Wagon-ExtraLight.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'West-Condensed';
+    src: url('../../assets/font/West-Condensed.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
