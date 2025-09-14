@@ -1,1 +1,0 @@
-Chọn tầm 10 ảnh, nhưng phải làm cho các ảnh có cùng kích thước trước khi đưa vào đây, để hiển thị một cách đồng bộ.
