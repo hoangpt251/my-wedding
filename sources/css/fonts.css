@@ -28,13 +28,6 @@
 }
 
 @font-face {
-    font-family: 'Frauen-Script'; /*Cân nhắc xem có nên giữ lại font này không, trông không đẹp lắm*/
-    src: url('../../assets/font/Frauen-Script.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'Fraunces-Black';
     src: url('../../assets/font/Fraunces-Black.ttf') format('truetype');
     font-weight: normal;
@@ -47,8 +40,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
-/*Font FzWagon-LightItalic.otf đang không dùng --> Xóa*/
 
 @font-face {
     font-family: 'Hello-Honey';
@@ -70,7 +61,7 @@
     font-weight: normal;
     font-style: normal;
 }
-/*Font này còn chưa dùng*/
+
 @font-face {
     font-family: 'PHOBIA';
     src: url('../../assets/font/PHOBIA.OTF') format('opentype');
@@ -92,7 +83,6 @@
     font-style: normal;
 }
 
-/* Không đẹp*/
 @font-face {
     font-family: 'VLFADILLA';
     src: url('../../assets/font/VLFADILLA.OTF') format('opentype');
