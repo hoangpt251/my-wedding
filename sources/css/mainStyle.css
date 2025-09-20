@@ -46,6 +46,16 @@ p {
 .hero {
   position: relative;
   min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 .hero::before {
   content: '';
@@ -981,27 +991,56 @@ p {
 }
 .qr-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /*space-between*/ /* Căn giữa ngang*/
+  align-items: center; /*căn giữa dọc*/
   gap: 10px;
-  margin-top: 10px;
-  padding: 0 5px; /* nhỏ padding trái/phải nếu cần */
+  margin-top: 0px;
+  padding: 0; /* nhỏ padding trái/phải nếu cần */ /*0 5px;*/
   width: 100%;
   max-width: 250px;
   flex-wrap: nowrap;
 }
 .qr-buttons .btn {
-  flex: 1;
-  width: calc(50% - 5px);
+  white-space: nowrap;
+  padding: 10px 16px;
+  /* flex: 1; */
+  /* width: calc(50% - 5px); */
+  font-weight: 600;
+  border-radius: 6px;
   font-size: 15px;
   min-width: 0;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
-.qr-buttons .btn:hover {
+/* Màu mặc định với nền nhạt + viền nhẹ */
+.qr-buttons .btn-outline-primary {
+  background-color: #e9f2ff;
+  color: #0056b3;
+  border-color: #b3d7ff;
+}
+.qr-buttons .btn-outline-success {
+  background-color: #e9f8ef;
+  color: #1e7e34;
+  border-color: #b6e2cc;
+}
+.qr-buttons .btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+.qr-buttons .btn-outline-success:hover {
+  background-color: #28a745;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+/* .qr-buttons .btn:hover {
   background-color: #007bff;
   color: var(--white);
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+} */
 .qr-row-wrapper {
   display: flex;
   justify-content: center;
@@ -1043,6 +1082,15 @@ footer {
   padding: 1.0rem; /*3rem*/
   background-color: var(--pink);
   color: var(--white);
+}
+footer .title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2rem; /* hoặc 1.5rem nếu bạn muốn to hơn */
+  font-weight: 600;
+  line-height: 1.6;
+  margin-top: 0px;
+  color: rgb(43, 253, 54); /* hoặc màu khác nếu muốn nổi bật */
+  text-shadow: var(--shadow);
 }
 footer a {
   color: var(--black);
