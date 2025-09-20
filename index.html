@@ -51,25 +51,26 @@
 
   <!-- Các styles & script ngoài -->
   <!-- simplyCountdown -->
-  <link rel="stylesheet" href="sources/css/simplyCountdown.theme.default.css" >
-  <script src="sources/js/simplyCountdown.min.js"></script>
+  <!--link rel="stylesheet" href="sources/css/simplyCountdown.theme.default.css"-->
+  <!--script src="sources/js/simplyCountdown.min.js"></script-->
   
   <!-- Sử dụng cho album ảnh -->
-  <link rel="stylesheet" id="fancybox-css" href="sources/css/fancybox.css" media="all">
-  <link rel="stylesheet" id="swiper slide-css" href="sources/css/swiper-bundle.min.css" media="all">
-  <link rel="stylesheet" id="aos style-css" href="sources/css/aos.css" media="all">
-  <link rel="stylesheet" id="wedding style-css" href="sources/css/media.css" media="all">
+  <link rel="stylesheet" id="fancybox-css" href="sources/css/fancybox.css">
+  <link rel="stylesheet" id="swiper slide-css" href="sources/css/swiper-bundle.min.css">
+  <link rel="stylesheet" id="aos style-css" href="sources/css/aos.css">
+  <!--link rel="stylesheet" id="wedding style-css" href="sources/css/media.css" media="all"-->
+  
   <!--link rel="stylesheet" href="sources/css/style.css"--> <!-- Đang ảnh hưởng đến tổng thể layout -->
   <!--link rel="stylesheet" id="uikit-css" href="sources/css/uikit.min.css" media="all"--> <!-- Ảnh hưởng đến phần ảnh background trang đầu tiên -->
-  <link rel="stylesheet" id="theme-css" href="sources/css/theme.css" media="all">
+  
+  <!--link rel="stylesheet" id="theme-css" href="sources/css/theme.css" media="all"--> <!--Vẫn open-->
 
   <!-- Sử dụng cho thiệp cưới -->
-  <link rel="stylesheet" href="sources/css/weddingCard.css">
+  <!--link rel="stylesheet" href="sources/css/weddingCard.css"-->
 
   <!-- Main style -->
-  <link rel="stylesheet" href="mainStyle.css">
-
-
+  <!--link rel="stylesheet" href="mainStyle.css"-->
+  <link rel="stylesheet" href="sources/css/mainStyle.css">
 </head>
 
 <body>
@@ -79,13 +80,13 @@
     <main>
       <img src="assets/picture/background/le_thanh_hon.png" alt="Lễ Thành Hôn" style="border: none; margin: 30px;" width="350">
       <h1>Trần Hoàng & Thanh Xuân</h1>
-      <p>Sẽ được bắt đầu sau:</p>
+      <h4>Sẽ được bắt đầu sau:</h4>
       <div class="simply-countdown"></div>
       <a href="#home" class="btn btn-lg mt-4 pulse-btn" onClick="enableScroll()">Mở thiệp cưới</a>
     </main>
   </section>
 
-  <!-- THANH ĐIỀU HƯỚNG (TASK BAR) -> TÌM HIỂU THÊM -->
+  <!-- THANH ĐIỀU HƯỚNG (TASK BAR) -->
   <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
     <div class="container">
       <a class="navbar-brand" href="#">HX Wedding</a>
@@ -113,14 +114,15 @@
     </div>
   </nav>
 
+  <!-- TRANG SỰ KIỆN CƯỚI -->
   <section id="home" class="home">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8 text-center">
-          <h2>Sự Kiện Cưới</h2>
+          <h2 class="h2-event">Sự Kiện Cưới</h2>
           <h3>Được tổ chức vào Chủ Nhật, ngày 02 tháng 11 năm 2025 <br>
               (Tức ngày 13 tháng 09 âm lịch)</h3>
-          <p>Sự hiện diện của Quý Khách là niềm vinh dự của gia đình chúng tôi.<br>
+          <p class="p-event">Sự hiện diện của Quý Khách là niềm vinh dự của gia đình chúng tôi.<br>
              Rất hân hạnh được đón tiếp!</p>
         </div>
       </div>
@@ -130,10 +132,9 @@
           <div class="row">
             <div class="col-8 text-end">
               <h3>💕 Chú Rể 💕 <br>
-                  Phạm Trần Hoàng</h3>
-              <p>Gia Lộc - Chí Minh - Tp. Hải Phòng<br>
-                (Văn Tố - Tứ Kỳ - Hải Dương cũ)
-              </p>
+                  <span class="title-name">Phạm Trần Hoàng</span></h3>
+              <p class="address">Gia Lộc - Chí Minh - Tp. Hải Phòng<br>
+                (Văn Tố - Tứ Kỳ - Hải Dương cũ)</p>
             </div>
             <div class="col-4">
               <img src="assets/picture/avatar/anh.jpg" alt="Trần Hoàng" class="img-responsive rounded-circle">
@@ -154,8 +155,8 @@
             </div>
             <div class="col-8">
               <h3>💕 Cô Dâu 💕<br>
-                  Trình Thị Xuân</h3>
-              <p>Tràng Kênh - Cẩm Giang - Tp. Hải Phòng<br>
+                  <span class="title-name">Trình Thị Xuân</span></h3>
+              <p class="address">Tràng Kênh - Cẩm Giang - Tp. Hải Phòng<br>
                 (Tt. Cẩm Giang - Cẩm Giàng - Hải Dương cũ)
               </p>
             </div>
@@ -167,191 +168,142 @@
 
   <!-- THIỆP CƯỚI -->
   <section id="info" class="wedding-page">
-  <div class="cards-container">
-    <!-- Mobile selectors -->
-    <div class="card-selectors mobile-only">
-      <div class="card-selector active" data-target="card-trai">Thiệp cưới Nhà Trai</div>
-      <div class="card-selector" data-target="card-gai">Thiệp cưới Nhà Gái</div>
-    </div>
+    <div class="cards-container">
+      <!-- Mobile selectors -->
+      <div class="card-selectors mobile-only">
+        <div class="card-selector active" data-target="card-trai">Thiệp cưới Nhà Trai</div>
+        <div class="card-selector" data-target="card-gai">Thiệp cưới Nhà Gái</div>
+      </div>
 
-    <!-- Card Nhà Trai -->
-    <div class="card-wrapper active" id="card-trai">
-      <div class="card-header desktop-only">Thiệp cưới Nhà Trai</div>
-      <div class="wedding-card">
-        <div class="card-image">
-          <img src="assets/picture/background/chu_hy.png" alt="Hoàng Xuân">
-        </div>  
-        <h3>TRÂN TRỌNG KÍNH MỜI</h3>
-        <p><b>Quý Khách</b></p>
-        <p class="invite-text">Tới dự bữa cơm thân mật và <br>chung vui cùng gia đình chúng tôi !</p>
-        <div class="names">
-          <h2>Phạm Trần Hoàng</h2>
-            <div class="heart">
-              <img src="assets/picture/icon/1f49e.gif" alt="heart">
+      <!-- Card Nhà Trai -->
+      <div class="card-wrapper active" id="card-trai">
+        <div class="card-header desktop-only">Thiệp cưới Nhà Trai</div>
+        <div class="wedding-card">
+          <div class="card-image">
+            <img src="assets/picture/background/chu_hy.png" alt="Hoàng Xuân">
+          </div>  
+          <h3>TRÂN TRỌNG KÍNH MỜI</h3>
+          <p class="guest-name">Quý Khách</p>
+          <p class="invite-text">Tới dự bữa cơm thân mật và <br>chung vui cùng gia đình chúng tôi !</p>
+          <div class="names">
+            <h2 class="couple-name">Phạm Trần Hoàng</h2>
+              <div class="heart">
+                <img src="assets/picture/icon/1f49e.gif" alt="heart">
+              </div>
+            <h2 class="couple-name">Trình Thị Xuân</h2>
+          </div>
+          <p class="invite-location"> Được tổ chức:</p>
+          <div class="date-container">
+            <div class="date-top">CHỦ NHẬT</div>
+            <div class="date-middle">
+              <div class="date-side left">VÀO LÚC:<br><span>9h00</span></div>
+            <div class="date-center">02</div>
+              <div class="date-side right">THÁNG 11<br><span>2025</span></div>
             </div>
-          <h2>Trình Thị Xuân</h2>
-        </div>
-        <p class="invite-location"> Được tổ chức:</p>
-        <div class="date-container">
-          <div class="date-top">CHỦ NHẬT</div>
-          <div class="date-middle">
-            <div class="date-side left">VÀO LÚC:<br><span>9h00</span></div>
-          <div class="date-center">02</div>
-            <div class="date-side right">THÁNG 11<br><span>2025</span></div>
+          </div>
+            <p class="lunar-text">(Nhằm ngày 13 tháng 09 năm Ất Tỵ)</p>
+            <p><span style="font-weight:bold; color:#000000; font-size:18px; font-family: Arial, sans-serif;">Tại: </span>
+              <span class="local-text">Sân Khấu nhà Trai</span></p>
+            <p class="location-text">Gia Lộc - Chí Minh - Tp. Hải Phòng</p>
+            <p class="location-text">(Văn Tố - Tứ Kỳ - Hải Dương cũ)</p>
+
+          <!-- Thông tin hai bên -->
+          <div class="family-info">
+            <div class="family-block">
+              <h4>Nhà Trai</h4>
+              <p class="parents">Bố: <span class="parents-name">Phạm Văn Nhị</span></p>
+              <p class="parents">Mẹ: <span class="parents-name">Trần Thị Thúy</span></p>
+            </div>
+            <div class="family-block">
+              <h4>Nhà Gái</h4>
+              <p class="parents">Bố: <span class="parents-name">Trình Văn Thiện</span></p>
+              <p class="parents">Mẹ: <span class="parents-name">Vũ Thị Son</span></p>
+            </div>
+          </div>
+          <!-- Thêm biểu tượng liên hệ (sđt và map) -->
+          <div class="contact-info">
+            <span>Liên hệ:</span>
+            <!-- Chỉ 1 link điện thoại, Android/iOS sẽ tự hiện lựa chọn Zalo/Phone -->
+            <a href="tel:0346532656" class="contact-icon" title="Gọi cho chú rể">
+              <i class="bi bi-telephone-fill"></i>
+            </a>
+            <!-- Bản đồ -->
+            <a href="https://maps.app.goo.gl/pFA5ApqU98jYZ3xT7" target="_blank" class="contact-icon" title="Xem bản đồ">
+              <i class="bi bi-geo-alt-fill"></i>
+            </a>
           </div>
         </div>
+      </div>
+
+      <!-- Card Nhà Gái -->
+      <div class="card-wrapper" id="card-gai">
+        <div class="card-header desktop-only">Thiệp cưới Nhà Gái</div>
+        <div class="wedding-card">
+          <div class="card-image">
+            <img src="assets/picture/background/chu_hy.png" alt="Hoàng Xuân">
+          </div>  
+          <h3>TRÂN TRỌNG KÍNH MỜI</h3>
+          <p class="guest-name">Quý Khách</p>
+          <p class="invite-text">Tới dự bữa cơm thân mật và <br>chung vui cùng gia đình chúng tôi !</p>
+          <div class="names">
+            <h2 class="couple-name">Trình Thị Xuân</h2>
+              <div class="heart">
+                <img src="assets/picture/icon/1f49e.gif" alt="heart">
+              </div>
+            <h2 class="couple-name">Phạm Trần Hoàng</h2>
+          </div>
+          <p class="invite-location"> Được tổ chức:</p>
+          <div class="date-container">
+            <div class="date-top">Chủ Nhật</div>
+            <div class="date-middle">
+              <div class="date-side left">VÀO LÚC:<br><span>10h00</span></div>
+            <div class="date-center">02</div>
+              <div class="date-side right">THÁNG 11<br><span>2025</span></div>
+            </div>
+          </div>
           <p class="lunar-text">(Nhằm ngày 13 tháng 09 năm Ất Tỵ)</p>
           <p><span style="font-weight:bold; color:#000000; font-size:18px; font-family: Arial, sans-serif;">Tại: </span>
-             <span class="local-text">Sân Khấu nhà Trai</span></p>
-          <p class="location-text">Gia Lộc - Chí Minh - Tp. Hải Phòng</p>
-          <p class="location-text">(Văn Tố - Tứ Kỳ - Hải Dương cũ)</p>
+            <span class="local-text">Sân Khấu nhà Gái</span></p>
+          <p class="location-text">Tràng Kênh - Cẩm Giang - Tp. Hải Phòng</p>
+          <p class="location-text">(Tt. Cẩm Giang - Cẩm Giàng - Hải Dương cũ)</p>
 
-        <!-- Thông tin hai bên -->
-        <div class="family-info">
-          <div class="family-block">
-            <h4>Nhà Trai</h4>
-            <p class="parents">Bố: <span class="parents-name">Phạm Văn Nhị</span></p>
-            <p class="parents">Mẹ: <span class="parents-name">Trần Thị Thúy</span></p>
-          </div>
-          <div class="family-block">
-            <h4>Nhà Gái</h4>
-            <p class="parents">Bố: <span class="parents-name">Trình Văn Thiện</span></p>
-            <p class="parents">Mẹ: <span class="parents-name">Vũ Thị Son</span></p>
-          </div>
-        </div>
-        <!-- Thêm biểu tượng liên hệ (sđt và map) -->
-        <div class="contact-info">
-          <span>Liên hệ:</span>
-          <!-- Chỉ 1 link điện thoại, Android/iOS sẽ tự hiện lựa chọn Zalo/Phone -->
-          <a href="tel:0346532656" class="contact-icon" title="Gọi chú rể">
-            <i class="bi bi-telephone-fill"></i>
-          </a>
-          <!-- Bản đồ -->
-          <a href="https://maps.app.goo.gl/pFA5ApqU98jYZ3xT7" target="_blank" class="contact-icon" title="Xem bản đồ">
-            <i class="bi bi-geo-alt-fill"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card Nhà Gái -->
-    <div class="card-wrapper" id="card-gai">
-      <div class="card-header desktop-only">Thiệp cưới Nhà Gái</div>
-      <div class="wedding-card">
-        <div class="card-image">
-          <img src="assets/picture/background/chu_hy.png" alt="Hoàng Xuân">
-        </div>  
-        <h3>TRÂN TRỌNG KÍNH MỜI</h3>
-        <p><b>Quý Khách</b></p>
-        <p class="invite-text">Tới dự bữa cơm thân mật và <br>chung vui cùng gia đình chúng tôi !</p>
-        <div class="names">
-          <h2>Trình Thị Xuân</h2>
-            <div class="heart">
-              <img src="assets/picture/icon/1f49e.gif" alt="heart">
+          <!-- Thông tin hai bên (ngược lại) -->
+          <div class="family-info">
+            <div class="family-block">
+              <h4>Nhà Gái</h4>
+              <p class="parents">Bố: <span class="parents-name">Trình Văn Thiện</span></p>
+              <p class="parents">Mẹ: <span class="parents-name">Vũ Thị Son</span></p>
             </div>
-          <h2>Phạm Trần Hoàng</h2>
-        </div>
-        <p class="invite-location"> Được tổ chức:</p>
-        <div class="date-container">
-          <div class="date-top">Chủ Nhật</div>
-          <div class="date-middle">
-            <div class="date-side left">VÀO LÚC:<br><span>10h00</span></div>
-          <div class="date-center">02</div>
-            <div class="date-side right">THÁNG 11<br><span>2025</span></div>
+            <div class="family-block">
+              <h4>Nhà Trai</h4>
+              <p class="parents">Bố: <span class="parents-name">Phạm Văn Nhị</span></p>
+              <p class="parents">Mẹ: <span class="parents-name">Trần Thị Thúy</span></p>
+            </div>
           </div>
-        </div>
-        <p class="lunar-text">(Nhằm ngày 13 tháng 09 năm Ất Tỵ)</p>
-        <p><span style="font-weight:bold; color:#000000; font-size:18px; font-family: Arial, sans-serif;">Tại: </span>
-          <span class="local-text">Sân Khấu nhà Gái</span></p>
-        <p class="location-text">Tràng Kênh - Cẩm Giang - Tp. Hải Phòng</p>
-        <p class="location-text">(Tt. Cẩm Giang - Cẩm Giàng - Hải Dương cũ)</p>
-
-        <!-- Thông tin hai bên (ngược lại) -->
-        <div class="family-info">
-          <div class="family-block">
-            <h4>Nhà Gái</h4>
-            <p class="parents">Bố: <span class="parents-name">Trình Văn Thiện</span></p>
-            <p class="parents">Mẹ: <span class="parents-name">Vũ Thị Son</span></p>
+          <!-- Thêm biểu tượng liên hệ (sđt và map) -->
+          <div class="contact-info">
+            <span>Liên hệ:</span>
+            <!-- Chỉ 1 link điện thoại, Android/iOS sẽ tự hiện lựa chọn Zalo/Phone -->
+            <a href="tel:0372575188" class="contact-icon" title="Gọi cho cô dâu">
+              <i class="bi bi-telephone-fill"></i>
+            </a>
+            <!-- Bản đồ -->
+            <a href="https://maps.app.goo.gl/bPobgvXoyfYW2UUA6" target="_blank" class="contact-icon" title="Xem bản đồ">
+              <i class="bi bi-geo-alt-fill"></i>
+            </a>
           </div>
-          <div class="family-block">
-            <h4>Nhà Trai</h4>
-            <p class="parents">Bố: <span class="parents-name">Phạm Văn Nhị</span></p>
-            <p class="parents">Mẹ: <span class="parents-name">Trần Thị Thúy</span></p>
-          </div>
-        </div>
-        <!-- Thêm biểu tượng liên hệ (sđt và map) -->
-        <div class="contact-info">
-          <span>Liên hệ:</span>
-          <!-- Chỉ 1 link điện thoại, Android/iOS sẽ tự hiện lựa chọn Zalo/Phone -->
-          <a href="tel:0372575188" class="contact-icon" title="Gọi cô dâu">
-            <i class="bi bi-telephone-fill"></i>
-          </a>
-          <!-- Bản đồ -->
-          <a href="https://maps.app.goo.gl/bPobgvXoyfYW2UUA6" target="_blank" class="contact-icon" title="Xem bản đồ">
-            <i class="bi bi-geo-alt-fill"></i>
-          </a>
         </div>
       </div>
     </div>
-  </div>
   </section>
-
-
-  <!-- ĐỊA CHỈ TỔ CHỨC-->
-  <!--section id="map" class="info">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8 col-10 text-center">
-          <h2>Địa chỉ Sân Khấu</h2>
-          <p class="description">Quý Khách vui lòng tham khảo địa điểm tổ chức theo bản đồ bên dưới đây !</p>
-        </div>
-      </div>
-
-      <div class="map-row mt-5"-->
-        <!-- Nhà Trai -->
-        <!--div class="map-card">
-          <div class="card-header">Nhà Trai</div>
-          <div class="card-body text-center">
-            <p class="loca-text">
-              Địa chỉ: Gia Lộc - Chí Minh - Tp. Hải Phòng <br>
-              (Văn Tố - Tứ Kỳ - Hải Dương cũ)
-            </p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2653.7051611355982!2d106.42967090291941!3d20.80447210082412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1svi!2s!4v1755008456318!5m2!1svi!2s" 
-                  width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" 
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <div class="card-footer">
-            <a href="https://maps.app.goo.gl/pFA5ApqU98jYZ3xT7" target="_blank" class="btn btn-light btn-sm pulse-btn">Xem bản đồ</a>
-          </div>
-        </div-->
-        <!-- Nhà Gái -->
-        <!--div class="map-card">
-          <div class="card-header">Nhà Gái</div>
-          <div class="card-body text-center">
-            <p class="loca-text">
-              Địa chỉ: Tràng Kênh - Cẩm Giang - Tp. Hải Phòng <br>
-              (Tt. Cẩm Giang - Cẩm Giàng - Hải Dương cũ)
-            </p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1576.322050608635!2d106.19262200988011!3d20.95499484580937!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1svi!2s!4v1755003695655!5m2!1svi!2s"
-                  width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <div class="card-footer">
-            <a href="https://maps.app.goo.gl/bPobgvXoyfYW2UUA6" target="_blank" class="btn btn-light btn-sm pulse-btn">Xem bản đồ</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section-->
 
   <!-- CÂU CHUYỆN CỦA CHÚNG TÔI -->  
   <section id="story" class="story">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8 col-10 text-center">
-          <!--span>Câu chuyện tình yêu của chúng tôi</span-->
           <h2>Câu chuyện của chúng tôi</h2>
-          <p class="sub-topic">Một phút xa nhau vạn phút nhớ, một lần gặp gỡ vạn lần mơ</p>
+          <p>Một phút xa nhau vạn phút nhớ, một lần gặp gỡ vạn lần mơ</p>
         </div>
       </div>
 
@@ -363,10 +315,10 @@
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h3>Quen biết</h3>
-                  <span>23/10/2023</span>
+                  <span>== 23/10/2023 ==</span>
                 </div>
                 <div class="timeline-body">
-                  <p>Bắt đầu là những dòng tin nhắn kèm theo đó là những câu chuyện đã được chúng tôi gửi cho nhau. 
+                  <p class="parag">Bắt đầu là những dòng tin nhắn kèm theo đó là những câu chuyện đã được chúng tôi gửi cho nhau. 
                     Qua những câu chuyện, chúng tôi cũng hiểu về nhau một phần, và quyết định tìm hiểu về nhau nhiều hơn bằng những cuộc hẹn. 
                     Những câu chuyện thú vị đó cũng đã kéo chúng tôi lại gần với nhau hơn.
                   </p>
@@ -379,10 +331,10 @@
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h3>Lần gặp gỡ đầu tiên</h3>
-                  <span>19/01/2024</span>
+                  <span>== 19/01/2024== </span>
                 </div>
                 <div class="timeline-body">
-                  <p>Đó là một buổi tối mùa đông, trong không gian cổ điển của một quán cà phê với những cuốn sách được bày ngay ngắn trên giá. 
+                  <p class="parag">Đó là một buổi tối mùa đông, trong không gian cổ điển của một quán cà phê với những cuốn sách được bày ngay ngắn trên giá. 
                     Em mang cho tôi một chiếc bánh sinh nhật nhỏ xinh cùng những lời chúc tốt đẹp cho một tuổi mới. 
                     Một buổi tối thật lãng mạn và ý nghĩa!
                   </p>
@@ -395,10 +347,10 @@
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h3>Về chung một nhà</h3>
-                  <span>30/10/2025</span>
+                  <span>== 30/10/2025== </span>
                 </div>
                 <div class="timeline-body">
-                  <p>Trải qua một thời gian tìm hiểu đủ để chúng tôi tìm hiểu về nhau thật kỹ lưỡng, chúng tôi đã quyết định tiến thêm một bước xa hơn, đó là xây dựng gia đình với nhau. 
+                  <p class="parag">Trải qua một thời gian đủ để chúng tôi tìm hiểu về nhau thật kỹ lưỡng, chúng tôi đã quyết định tiến thêm một bước xa hơn, đó là xây dựng gia đình với nhau. 
                   Chúng tôi cũng nhận được sự đồng thuận từ hai bên gia đình về một mối quan hệ bền chặt, gắn bó với nhau.
                   </p>
                 </div>
@@ -501,9 +453,10 @@
       </div>
       <div class="swiper-pagination"></div>
     </div>
+  </section>
   
   <!-- VIDEO ẢNH CƯỚI -->
-  <section id="video" class="video-section">
+  <section id="video" class="video">
     <div class="video-container">
       <h2>VIDEO ẢNH</h2>
       <p>Yêu nhau chẳng quản lầm than,<br>Mấy sông cũng lội, mấy ngàn cũng qua.</p>
@@ -521,28 +474,28 @@
   </section>
 
   <!-- GỬI LỜI CHÚC ĐẾN DÂU/RỂ-->
-  <section id="message" class="section-message uk-background-cover uk-section" style="background-image:url(images/iWptMgSmvKrhcayB0fVstdc2eMAlopcp1xM0PkAv.jpg); display:block">
-    <div class="uk-position-cover uk-overlay uk-overlay-primary" style="opacity:.5"> </div>
-    <div class="message-container container uk-position-relative uk-position-z-index">
-        <h2 class="section-title uk-light" style="color:pink">Gửi lời chúc đến cặp đôi </h2>
+  <section id="message" class="message-wish">
+    <div class="overlay"> </div>
+    <div class="container">
+        <h2>Gửi lời chúc đến cặp đôi </h2>
+        <p>Vợ Chồng cảm ơn những lời chúc tốt đẹp của Quý Khách</p>
         <div class="list_message"></div>
-        <div class="uk-padding-small uk-border-rounded blur-bg" style="border:1px solid lightgreen">
-            <h3 class="form-title" style="color:lightgreen">Gửi lời chúc</h3>
+        <div class="message-box blur-bg">
+            <h3 class="form-title">Gửi lời chúc</h3>
             <form action="" id="wishForm">
                 <!-- Các trường để nhập thông tin -->
-                <div class="input-group uk-margin-top" style="color:lightgreen">
+                <div class="input-group">
                     <!--1. Nhập tên của bạn -->
                     <label for="name">Tên của bạn</label>
-                    <input style="border:1px solid lightgreen; color: black;" id="name" name="entry.350023970" type="text" class="input blur-bg" value="" required="">
+                    <input class="input form-style blur-bg" id="name" name="entry.350023970" type="text" value="" required="">
                     <!--2. Nhập tổ chức, đơn vị công tác -->
                     <label for="organization">Thuộc cơ quan/đơn vị</label>
-                    <input style="border:1px solid lightgreen; color: black;" id="organization" name="entry.1642735953" type="text" class="input blur-bg" value="">
+                    <input class="input form-style blur-bg" id="organization" name="entry.1642735953" type="text" value="">
                 </div>
                 <!-- 3. Mối quan hệ (Dropdown) -->
-                <div class="input-group uk-margin-top" style="color:lightgreen">
+                <div class="input-group">
                     <label for="relation">Mối quan hệ với dâu/rể</label> 
-                    <select id="relation" name="entry.695324625" required=""
-                        style="border:1px solid lightgreen; transition:border-color .2s; color:black" class="input blur-bg"
+                    <select class="input form-style blur-bg transition" id="relation" name="entry.695324625" required=""
                             onfocus="this.style.borderColor='#1a73e8'" 
                             onblur="this.style.borderColor='#dadce0'">
                         <option value="" disabled selected>-- Hãy chọn một --</option>
@@ -554,29 +507,31 @@
                         <option value="Khác">Khác</option>
                     </select>
                 </div>
-                <div class="input-group uk-margin-top">
+                <div class="input-group">
                     <!--4. Nhập lời chúc-->
-                    <label for="message" style="color:lightgreen">Nhập lời chúc</label>
+                    <label for="congrat">Nhập lời chúc</label>
                     <!--input style="border:1px solid white; color: black;" type="text" id="message" name="entry.77831247" class="input blur-bg" required=""-->
-                    <textarea id="message" name="entry.77831247" rows="3" required
-                        style="border:1px solid lightgreen; color: black;" class="input blur-bg"></textarea>
+                    <textarea id="congrat" name="entry.77831247" rows="3" 
+                              class="input blur-bg" required=""></textarea>
                 </div>
                 <!-- Nút bấm gửi lời chúc -->
-                <button type="submit" class="btn btn-primary send_message uk-margin-top" style="color:black">Gửi lời chúc</button>
+                <div class="button-group">
+                  <button type="submit" class="btn btn-primary">Gửi lời chúc</button>
+                  <a href="https://docs.google.com/spreadsheets/d/1_MWJPZ-6AjnId-YTGcheopYJLCcqZsKEdszhW4tKMuk/edit?usp=sharing"
+                    target="_blank" rel="noopener noreferrer" class="btn btn-primary">Xem lời chúc</a>
+                </div>
             </form>
             <p style="margin-top:10px;" id="status"></p>
-                <a href="https://docs.google.com/spreadsheets/d/1_MWJPZ-6AjnId-YTGcheopYJLCcqZsKEdszhW4tKMuk/edit?usp=sharing"
-                    target="_blank" rel="noopener noreferrer" style="color:blue">Xem lời chúc</a>
         </div>
+    </div>
   </section>
+
   <!-- MỪNG CƯỚI ONLINE -->
   <section id="gifts" class="gifts">
     <h2>MỪNG CƯỚI ONLINE</h2>
-    <p>Vợ chồng chân thành cảm ơn tình cảm của Quý Khách</p>
-    <div class="wedding-box">
+    <p>Vợ chồng chân thành cảm ơn tình cảm của Quý Khách 💝</p>
+    <div class="wedding-gifts">
       <div class="overlay">
-        <!--h2 class="fw-bold fs-2">Mừng cưới cô dâu, chú rể</h2>
-        <p>Chân thành cảm ơn tình cảm của Quý Khách đã gửi đến dâu, rể.</p-->
         <div class="gift-box-bottom">
           <img src="assets/picture/icon/gift-box.gif" alt="Hộp quà" class="gift-icon" onclick="showGiftModal()">
           <p class="gift-message">💖 Chúc mừng hạnh phúc 💖</p>
@@ -594,7 +549,7 @@
             <!-- Chú Rể -->
             <div>
               <div class="qr-card">
-                <h6 class="fw-bold">MỪNG CƯỚI CHÚ RỂ</h6>
+                <h5 class="fw-bold">MỪNG CƯỚI CHÚ RỂ</h5>
                 <img src="assets/picture/qrCode/hoangpt.jpg" alt="QR Chú Rể"
                   onclick="showModalImage('assets/picture/qrCode/hoangpt.jpg')">
                 <div class="qr-buttons">
@@ -608,7 +563,7 @@
             <!-- Cô Dâu -->
             <div>
               <div class="qr-card">
-                <h6 class="fw-bold">MỪNG CƯỚI CÔ DÂU</h6>
+                <h5 class="fw-bold">MỪNG CƯỚI CÔ DÂU</h5>
                 <img src="assets/picture/qrCode/xuantt.jpg" alt="QR Cô Dâu"
                   onclick="showModalImage('assets/picture/qrCode/xuantt.jpg')">
                 <div class="qr-buttons">
@@ -647,12 +602,6 @@
     </div>
   </footer>
 
-  <script src="sources/js/fancybox.umd.js" id="fancybox js-js"></script>
-  <script src="sources/js/aos.js" id="aos js-js"></script>
-  <script src="sources/js/swiper-bundle.min.js" id="swiper slide-js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="sources/js/media.js" id="gallery-js"></script>
-  
   <div id="audio-container">
     <audio id="song" autoplay loop>
       <source src="assets/music/music.mp3" type="audio/mp3">
@@ -663,6 +612,13 @@
     </div>
   </div>
 
+  <script src="sources/js/simplyCountdown.min.js"></script>
+  <script src="sources/js/fancybox.umd.js" id="fancybox js-js"></script>
+  <script src="sources/js/aos.js" id="aos js-js"></script>
+  <script src="sources/js/swiper-bundle.min.js" id="swiper slide-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="sources/js/media.js" id="gallery-js"></script>
+  
   <!-- Countdown-->
   <script>
     simplyCountdown('.simply-countdown', {
@@ -740,7 +696,7 @@
     // if (!localStorage.getItem('opened')) {
     //   disableScroll();
     // }
-    disableScroll();  //cần phải kích hoạt lại --> Cấm xóa
+    //disableScroll();  //cần phải kích hoạt lại --> Cấm xóa
   </script>
 
   <script>
@@ -784,6 +740,38 @@
     .catch(() => {
         alert("Có lỗi xảy ra, vui lòng thử lại.");
     });
+    });
+  </script>
+
+  <!-- Xử lý cảnh báo khi không nhập gì trong form -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Tên của bạn
+      const nameInput = document.getElementById('name');
+      nameInput.addEventListener('invalid', function () {
+        this.setCustomValidity('Vui lòng nhập tên của bạn');
+      });
+      nameInput.addEventListener('input', function () {
+        this.setCustomValidity('');
+      });
+
+      // Mối quan hệ với dâu/rể
+      const relationSelect = document.getElementById('relation');
+      relationSelect.addEventListener('invalid', function () {
+        this.setCustomValidity('Vui lòng nhập mối quan hệ với dâu/rể');
+      });
+      relationSelect.addEventListener('input', function () {
+        this.setCustomValidity('');
+      });
+
+      // Lời chúc (textarea)
+      const messageTextarea = document.getElementById('congrat');
+      messageTextarea.addEventListener('invalid', function () {
+        this.setCustomValidity('Vui lòng nhập lời chúc');
+      });
+      messageTextarea.addEventListener('input', function () {
+        this.setCustomValidity('');
+      });
     });
   </script>
 
