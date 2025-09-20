@@ -1,10 +1,14 @@
 /* === NHỮNG NGUỒN IMPORT TỪ BÊN NGOÀI, PHẦN CÀI ĐẶT DÙNG CHUNG === */
-@import url('assets/font/font.css');
+/* @import url('fonts.css'); */
 @import url('keyframes.css');
 
 :root {
   --pink: #f14e95;
-  --bg: #0a0a0a;
+  --black : #181818;
+  --green: green;
+  --white : #fff;
+  --primary-color : #ec2178;
+  --message-title: rgb(253, 36, 108);
   --shadow: 0 2px 2px rgb(0 0 0 / 0.5);
 }
 body {
@@ -13,22 +17,36 @@ body {
   min-height: 4000px;
 }
 /*Cài đặt các Heading dùng chung cho toàn website*/
-/*sửa lại các heading này theo đúng mục đích, thêm vào b, p, a*/
-h1, h2, h3, h4, h5, h6 {
-  font-family: main-font;
-  color: var(--heading-color);
-  margin: 0 0 1em;
+h1 {
+  font-family: 'UVF-Filxgirl', cursive;
+  font-size: 9rem;
+  color: var(--primary-color);
+  text-shadow: var(--shadow);
+  font-weight: bold;
 }
 h2 {
-  font-size: 28px;
+  color: var(--pink);
+  font-family: 'West-Condensed', fantasy;
+  font-size: 4rem;
   font-weight: bold;
-  color: var(--primary-color);
-  margin-bottom: 20px;
+  text-shadow: var(--shadow);
 }
+p {
+  color: var(--black);
+  font-family: 'HILLDA', serif;
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: -3px;
+  text-shadow: var(--shadow);
+} 
 /* === KẾT THÚC PHẦN CÀI ĐẶT DÙNG CHUNG === */
 
 /* 1. STYLE CHO PHẦN TRANG ĐẦU TIÊN (HERO PAGE) */
 /* Trang đầu tiên */
+.hero {
+  position: relative;
+  min-height: 100vh;
+}
 .hero::before {
   content: '';
   position: absolute;
@@ -36,46 +54,29 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(assets/picture/background/bgrd2.jpg);
+  background-image: url(../../assets/picture/background/bg2.jpg);
   background-size: cover;
   background-position: center;
   z-index: -1;
   /* filter: grayscale(); */
 }
-.hero {
-  position: relative;
-  min-height: 100vh;
-}
-.hero h1,
-.hero h4,
-.hero p {
-text-shadow: var(--shadow);
-}
-.hero h1 {
-  font-family: 'UVF-Filxgirl', cursive;
-  font-size: 9rem;
-  color: #f14e95;
-  text-shadow: var(--shadow);
-  font-weight: bold;
-}
 .hero h4 {
+  color: var(--pink);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  text-shadow: var(--shadow);
   font-size: 1.6rem;
-}
-.hero p {
-  font-size: 1.8rem;
-  color: #f14e95;
 }
 .hero a {
   color: var(--pink);
-  background-color: white;
+  background-color: var(--white);
   box-shadow: var(--shadow);
   font-size: medium;
 }
 .hero a:hover {
   background-color: var(--pink);
-  color: white;
+  color: var(--white);
 }
-
 /*Phần countdown*/
 .simply-countdown {
   overflow: hidden;
@@ -114,57 +115,82 @@ text-shadow: var(--shadow);
 }
 .mynavbar .navbar-brand,
 .mynavbar .offcanvas-title {
-  font-family: 'Sacramento', cursive;
-  font-size: 3.2rem;
+  font-family: 'UVF-Filxgirl', cursive;
+  font-size: 35px;
   font-weight: bold;
 }
 .mynavbar .nav-link {
-  text-transform: uppercase; /*Đây biến chữ thường thành chữ in hoa*/
+  font-family: 'PoetsenOne', cursive;
+  text-transform: none; /*Đây biến chữ thường thành chữ in hoa*/
+  color: #333;
+  transition: color 0.3s ease; /*Hiệu ứng chuyển màu*/
+}
+.mynavbar .nav-link:hover {
+  color: #e91e63; /* Màu khi hover – hồng đậm. Bạn có thể đổi mã màu */
 }
 /* === KẾT THÚC STYLE PHẦN HERO PAGE === */
 
 /* 2. STYLE CHO PHẦN SỰ KIỆN (EVENTS) */
-/*h2 đang được setup chung cho cả home, info, story, gifts*/
-/*.home h2,
-.info h2,
-.story h2,
-.gifts h2 {
-  color: var(--pink);
-  font-family: 'West-Condensed', fantasy;
-  font-size: 3.5rem;
-  font-weight: bold;
-  text-shadow: var(--shadow);
-}*/
-.home h2 {
-  color: var(--pink);
-  font-family: 'West-Condensed', fantasy;
-  font-size: 3.5rem;
-  font-weight: bold;
-  text-shadow: var(--shadow);
+.home {
+  position: relative;
+  background-image: url(../../assets/picture/background/bg3.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  margin-top: -6rem;
+  padding-top: 12rem;
+  padding-bottom: 5rem;
+  z-index: 1;
+}
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.75);
+  z-index: 0;
+}
+.home .container {
+  position: relative;
+  z-index: 1;
+}
+.home .h2-event {
+  margin-top: -30px;
+  margin-bottom: 12px;
 }
 .home h3 {
-  color: #444;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-family: 'PHOBIA', serif;
+  color: rgb(43, 43, 255);
+  font-size: 35px;
+  margin-bottom: 15px;
+  text-shadow: var(--shadow);
 }
-.home p {
+.home .p-event {
   font-family: 'ED-Lavonia', sans-serif;
-  font-size: 1.5rem;
-  color: #666;
+  font-size: 1.6rem;
+  color: #1f1c1c;
 }
 .home .couple {
   margin-top: 100px;
-}
-.home .couple h3 {
-  font-family: 'ED-Piedmont', serif;
-  font-size: 2.5rem;
-  color: var(--pink);
   text-shadow: var(--shadow);
 }
-.home .couple p {
+.home .couple h3 {
+  font-family: 'Fraunces-Black', serif;
+  font-size: 2.0rem;
+  color: rgb(148, 29, 163);
+  text-shadow: var(--shadow);
+  margin-bottom: 10px;
+}
+.home .couple h3 .title-name {
+  margin-top: 50px;
+  font-family: 'ED-Piedmont', serif;
+  font-size: 3rem;
+  color: var(--primary-color);
+  /* text-shadow: var(--shadow); */
+}
+.home .address {
   font-family: 'Autogate-Stamp', sans-serif;
   font-size: 1.5rem;
-  color: #d10cf8;
+  color: #0f1cd1;
   text-shadow: var(--shadow);
 }
 .home .couple img {
@@ -201,7 +227,7 @@ text-shadow: var(--shadow);
 /*Issue: Hiển thị ảnh nền trên page*/
 .wedding-page {
   position: relative;
-  background-image: url("assets/picture/background/hoang-xuan-4.JPG");
+  background-image: url(../../assets/picture/background/hoang-xuan-2.JPG);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -222,8 +248,8 @@ text-shadow: var(--shadow);
   z-index: 0;  /* đảm bảo nằm dưới card */
 }
 /* Nội dung card hiển thị trên overlay */
-.wedding-page .container {
-  position: relative;
+.wedding-page .page-title {
+  text-align: center;
   z-index: 1;
 }
 .wedding-card {
@@ -244,25 +270,26 @@ text-shadow: var(--shadow);
   font-family: 'West-Condensed', cursive;
   font-size: 22px;
 }
-.wedding-card b {
-  margin: 0px 0;
+.wedding-card .guest-name {
+  margin-top: 0px;
+  margin-bottom: 20px;
   color: #962e2e;
   font-family: 'Wagon-ExtraLight', cursive;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: bolder;
 }
 .wedding-card .invite-text {
   margin: 0px 0;
-  color: #000000;
-  font-family: 'Hello-Honey', cursive;
-  font-size: 22px;
+  color: var(--black);
+  font-family: 'HILLDA', cursive;
+  font-size: 15px;
   margin-top: -15px;
   margin-bottom: 0px;
   line-height: 1;
 }
 .wedding-card .invite-location {
   margin: 0px 0;
-  color: #000000;
+  color: var(--black);
   font-family: 'Fraunces-Black', cursive;
   font-size: 18px;
   margin-top: -10px;
@@ -316,17 +343,17 @@ text-shadow: var(--shadow);
   background: #f9f5f0;
   cursor: pointer;
   transition: all 0.3s ease;  /* hiệu ứng mượt */
-  animation: pulse 2s infinite;
+  animation: pulse-card 2s infinite;
 }
 .card-selector:hover {
   background: #d3a27f;       /* đổi nền */
-  color: #fff;               /* đổi màu chữ */
+  color: var(--white);               /* đổi màu chữ */
   box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* thêm bóng */
   transform: translateY(-3px); /* nổi lên nhẹ */
 }
 .card-selector.active {
   background: linear-gradient(135deg, #d83a2e, #f59e0b);
-  color: #fff;
+  color: var(--white);
   font-weight: bold;
   transform: scale(1.05); /* hơi to lên */
 }
@@ -338,13 +365,13 @@ text-shadow: var(--shadow);
 }
 .card-image img {
   max-width: 45%;   /* co vừa với chiều rộng card */
-  max-height: 80px; /* chỉnh chiều cao mong muốn */
+  max-height: 85px; /* chỉnh chiều cao mong muốn */
   object-fit: cover; /* cắt ảnh để vừa khung, không méo */
   border-radius: 6px; /* bo góc giống card */
 }
 /* Contact info */
 .contact-info {
-  margin-top: 15px;
+  margin-top: 10px;
   padding-top: 10px;
   border-top: 1px dashed #ccc;
   display: flex;
@@ -377,8 +404,8 @@ text-shadow: var(--shadow);
   text-align: center;
   margin: 20px 0;
 }
-/* Names */
-.names h2 {
+/* Tên cô dâu chú rể trên thiệp cưới */
+.names .couple-name {
   margin: 5px 0;
   color: #ff0000;
   -webkit-text-stroke: #000000;
@@ -387,7 +414,6 @@ text-shadow: var(--shadow);
   font-weight: bolder;
   margin-top: -5px;
 }
-
 /* Heart */
 .heart img {
   width: 40px;   /* chỉnh kích thước ảnh */
@@ -396,13 +422,11 @@ text-shadow: var(--shadow);
   margin-top: 0px;
   margin-bottom: 10px;
 }
-
 /* Date-Container */
 .date-container {
   text-align: center;
   margin: 20px 0;
 }
-
 /* Dòng trên (CHỦ NHẬT) */
 .date-top {
   font-weight: bold;
@@ -413,7 +437,6 @@ text-shadow: var(--shadow);
   text-transform: uppercase;
   color: #b22222;
 }
-
 /* Hàng giữa */
 .date-middle {
   display: flex;
@@ -422,7 +445,6 @@ text-shadow: var(--shadow);
   gap: 25px; /* khoảng cách giữa số và chữ */
   min-height: 60px;
 }
-
 /* Bên trái & phải */
 .date-side {
   display: flex;
@@ -436,14 +458,12 @@ text-shadow: var(--shadow);
   padding: 0 12px;
   white-space: nowrap;
 }
-
 .date-side span {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   display: block;
   font-size: 20px;
   font-weight: bold;
 }
-
 /* Gạch phân cách dọc */
 .date-side.left {
   border-right: 2.0px solid #000000;
@@ -451,43 +471,39 @@ text-shadow: var(--shadow);
 .date-side.right {
   border-left: 2.0px solid #000000;
 }
-
 /* Ngày ở giữa */
 .date-center {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 900;
   color: #b22222;
   margin: 0 10px;
   line-height: 1;
   animation: shake 1.2s infinite; /* hiệu ứng rung */
 }
-
 .lunar-text {
   margin-top: -20px;
-  margin-bottom: 0px;
+  /* margin-bottom: 0px; */
   font-family: 'VLFADILLA', serif;
   font-style: italic;
   font-size: 20px;
+  color: blue;
 }
-
 .local-text {
   color: #962e2e;
   font-family: 'PoetsenOne', cursive;
   font-size: 20px;
 }
-
 .location-text {
-  margin-top: -5px;
-  margin-bottom: 12px;
+  margin-top: 10px;
+  margin-bottom: 8px;
   line-height: 1;
   font-family: 'Indulge-Script', sans-serif;
   font-size: 15px;
   font-weight: bold;
 }
-
 /* Family info */
 .family-info {
   margin-top: 0px;
@@ -526,13 +542,14 @@ text-shadow: var(--shadow);
 
 /* 4. STYLE CHO PHẦN CÂU CHUYỆN (STORY) */
 .story {
+  min-height: 100vh;
   position: relative;
-  background-image: url("assets/picture/background/background.jpg");
+  background-image: url(../../assets/picture/background/bg1.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding-top: 10rem;
-  padding-bottom: 8rem;
+  padding-top: 5rem;
+  /* padding-bottom: 5rem; */
   isolation: isolate; /* tạo stacking context riêng, an toàn cho z-index */
 }
 /* Overlay mờ phủ lên background */
@@ -549,11 +566,6 @@ text-shadow: var(--shadow);
   z-index: 1;
   color: #000; /* chữ rõ ràng */
 }
-.story .sub-topic {
-  font-family: 'HILLDA', serif;
-  color: #000000;
-  font-size: 15px;
-}
 .story h3 {
   font-family: 'ED-Piedmont', serif;
   color: #d10cf8;
@@ -561,18 +573,18 @@ text-shadow: var(--shadow);
   text-decoration: underline;
   margin-top: -10px;
 }
-.story p {
-  font-family: 'HILLDA', serif;
-  color: #0e550e;
-  font-size: 13px;
-  margin-top: 5px;
-  margin-bottom: -3px;
-}
 .story span {
-  font-family: 'Frauen-Roman', cursive;
-  font-size: 12px;
+  font-family: 'Autogate-Stamp', cursive;
+  font-size: 16px;
   font-weight: bolder;
   margin-bottom: 0px;
+  color: #0f1cd1;
+}
+.story .parag {
+  font-family: 'VLFADILLA', cursive;
+  font-size: 22px;
+  color: purple;
+  text-shadow: var(--shadow);
 }
 .timeline {
   list-style: none;
@@ -612,6 +624,7 @@ text-shadow: var(--shadow);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border: 1px solid rgb(151, 255, 119);
 }
 .timeline li .timeline-panel {
   width: 40%;
@@ -663,33 +676,28 @@ text-shadow: var(--shadow);
 
 /* === 5. STYLE CHO PHẦN ALBUM ẢNH ===*/
 .gallery {
-    margin-top: 40px;
-    align-items: center;
-    text-align: center;
+  /* min-height: 100vh; */
+  position: relative;
+  padding-top: 5rem;
+  align-items: center;
+  text-align: center;
+  background-image: url(../../assets/picture/background/bg4.jpg);
+  isolation: isolate;
+  /* overflow: hidden; */
 }
-
+.gallery::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.50);  /* nền trắng mờ */
+  z-index: 0;  /* đảm bảo nằm dưới card */
+}
 .gallery .container {
-    max-width: 800px; /*có thể chỉnh lại tùy theo thiết kế*/
-    margin: 0 auto;
+  max-width: 800px; /*có thể chỉnh lại tùy theo thiết kế*/
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
 }
-
-.gallery h2,
-.video-section h2 {
-    color: #f14e95;
-    margin-bottom: 0.25rem;
-    font-family: 'West-Condensed', fantasy;
-    font-size: 3.5rem;
-    font-weight: bold;
-    text-shadow: 0 2px 2px rgb(0 0 0 / 0.5);
-}
-.gallery p,
-.video-section p {
-    color: #555;
-    font-family: 'HILLDA', serif;
-    color: black;
-    font-size: 15px;
-}
-
 .album-slide {
     overflow: hidden;
     width: 100%;
@@ -713,7 +721,7 @@ text-shadow: var(--shadow);
 .album-slide .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 50%;
+    width: 30%; /*Chuyển giả về 50% để hiển thị trên các thiết bị có màn lơn hơn 768px*/
     height: auto;
 }
 .album-slide .swiper-slide img {
@@ -723,14 +731,32 @@ text-shadow: var(--shadow);
 /* === KẾT THÚC STYLE PHẦN ALBUM ẢNH === */
 
 /* === 6. STYLE CHO PHẦN VIDEO === */
-.video-section {
-  padding: 75px 20px;
+.video {
+  min-height: 100vh;
+  padding: 5rem;
+  position: relative;
   text-align: center;
-  background-color: #fff; /* hoặc #f9f9f9 nếu muốn nổi bật */
+  align-items: center;
+  background-image: url(../../assets/picture/background/hoang-xuan-4.JPG);
+  background-size: cover;
+  background-position: center ;
+  isolation: isolate;
+}
+.video::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.80);  /* nền trắng mờ */
+  z-index: 0;
 }
 .video-container {
   max-width: 800px;
   margin: 0 auto;
+  z-index: 1;
+  position: relative;
+}
+.video p {
+  margin-bottom: 20px;
 }
 /* Đảm bảo video responsive */
 .video-wrapper {
@@ -751,14 +777,134 @@ text-shadow: var(--shadow);
 /* === KẾT THÚC STYLE PHẦN VIDEO === */
 
 /* === 7. STYLE CHO PHẦN LỜI CHÚC === */
-
+.message-wish {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 5rem;
+  background-image: url(https://hoangpt251.github.io/my-wedding/hoang-xuan.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  display: block;
+}
+.message-wish .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  padding: 30px;
+  background-color: rgba(34,34,34,0.5);
+}
+.message-wish .container {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  row-gap: 15px;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+.message-wish p {
+  color: lightgreen;
+  margin-top: -10px;
+}
+.message-box {
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px;
+  border-style: solid;
+}
+.list_message {
+  max-width: 90%;
+  display: grid;
+  row-gap: 40px;
+  padding: 0 20px;
+}
+.input {
+  border: 1px solid var(--primary-color);
+  padding: 8px 20px;
+  border-radius: 6px;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+  color: var(--message-title);
+  text-shadow: var(--shadow);
+  font-weight: bold;
+  font-size: 20px;
+}
+.form-title {
+  font-size: 27px;
+  color: var(--message-title);
+  font-weight: bold;
+  text-shadow: var(--shadow);
+  text-decoration: underline;
+}
+.form-style {
+  border: 1px;
+  border-style: solid;
+  font-size: 18px;
+  /* color: var(--message-title); */
+  /*cài màu font chữ*/
+}
+.form-style .transition {
+  transition: border-color .2s;
+}
+.blur-bg {
+  background-color: rgba(255, 255, 255, 0.3);
+  /* -webkit-backdrop-filter: blur(5px) !important;
+  backdrop-filter: blur(5px) !important; */
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+/* ==== Nút bấm ==== */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px; /*điều chỉnh khoảng cách giữa hai nút*/
+  margin-top: 15px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .3s;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-top: 15px;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+.btn-primary {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--white);
+}
+.btn-primary:hover {
+  box-shadow: 0 0 10px var(--primary-color);
+}
 /* === KẾT THÚC STYLE PHẦN LỜI CHÚC === */
 
 /* === 8. STYLE CHO PHẦN MỪNG CƯỚI === */
-#gifts.gifts.wedding-box{
-  min-height: 50vh; /*100vh*/
+.gifts {
+  min-height: 100vh;
+  padding-top: 5rem;
+  background-color: #ffeffe;
 }
-.gifts .wedding-box {
+.gifts h2,
+.gifts p {
+  text-align: center;
+}
+.gifts p {
+  margin-bottom: 25px;
+}
+.gifts .wedding-gifts {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -789,11 +935,11 @@ text-shadow: var(--shadow);
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("assets/picture/background/hoang-xuan-1.JPG"); /* ảnh nền trong khung */
+  background-image: url(../../assets/picture/background/hoang-xuan-1.JPG); /* ảnh nền trong khung */
   background-size: cover;
   background-position: center;
   opacity: 0.35; /* ảnh nền mờ */
-  z-index: 0;
+  z-index: 0; /*0*/
 }
 .gifts .gift-box-bottom {
   position: absolute;
@@ -809,7 +955,7 @@ text-shadow: var(--shadow);
   cursor: pointer;
   animation: shake 1.5s infinite;
   position: relative;
-  z-index: 2;
+  z-index: 2; /*2*/
 }
 .gifts .gift-message {
   margin-top: 15px;
@@ -852,22 +998,22 @@ text-shadow: var(--shadow);
 }
 .qr-buttons .btn:hover {
   background-color: #007bff;
-  color: white;
+  color: var(--white);
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 .qr-row-wrapper {
   display: flex;
   justify-content: center;
-  gap: 16px; /* 👈 Chỉnh khoảng cách giữa 2 QR card tại đây */
+  gap: 16px; /* Chỉnh khoảng cách giữa 2 QR card tại đây */
   flex-wrap: wrap;
 }
 .gifts h4 {
   font-size: 25px;
-  color: #0e550e;
+  color: var(--green);
   margin-top: 10px;
 }
-.gifts h6 {
+.gifts h5 {
   font-size: 16px;
   color:#4447f7;
   margin-top: 0px;
@@ -877,9 +1023,6 @@ text-shadow: var(--shadow);
   font-size: 15px;
   color:#8b5e3c;
   margin-top: 0px;
-}
-#gifts {
-  margin-bottom: 40px;
 }
 #giftModal .modal-dialog {
   max-width: 570px; /* tùy chỉnh độ rộng khung ngoài cùng */
@@ -899,15 +1042,15 @@ text-shadow: var(--shadow);
 footer {
   padding: 1.0rem; /*3rem*/
   background-color: var(--pink);
-  color: white;
+  color: var(--white);
 }
 footer a {
-  color: var(--bg);
+  color: var(--black);
   font-weight: bold;
   text-decoration: none;
 }
 footer a:hover {
-  color: white;
+  color: var(--white);
 }
 footer li {
   list-style: none;
@@ -926,7 +1069,7 @@ footer li {
   bottom: 2.5rem;
   right: 2rem;
   cursor: pointer;
-  color: white;
+  color: var(--white);
   opacity: 0.5;
   mix-blend-mode: difference;
   animation: rotating 4s linear infinite;
