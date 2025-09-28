@@ -1,165 +1,258 @@
-/*RESPONSIVE CỦA PHẦN HOME*/
+/* 
+  Ghi chú:
+  - CSS mặc định (không trong @media) áp dụng cho laptop/desktop lớn
+  - Các khối @media max-width dùng để chỉnh lại cho màn nhỏ hơn
+  - Các kích thước được setup trong responsive:
+    + max-width > 1400px: Cho các màn hình laptop cỡ lớn (loại lớn hơn 15.6in), desktop
+    + max-width <= 1400px: Cho các màn hình laptop cỡ vừa (loại 13, 14inch)
+    + max-width <= 1200px: Cho các màn hình laptop loại nhỏ
+    + max-width <= 992px: Cho các loại tablet xoay ngang, hoặc laptop nhỏ hơn
+    + max-width <= 768px: Cho các loại tablet dọc
+    + max-width <= 576px: Cho các loại phone cỡ lớn
+    + max-width <= 375px: Cho các loại phone cỡ nhỏ
+*/
+
+/*Các màn có kích thước lớn hơn 1400px*/
+.wedding-names .mobile-display { display: none; }
+.invite-time .mobile-display { display: none; }
+.p-event .mobile-display { display: none; }
+.album-slide .swiper-slide { width: 25%; }
+
+/* <= 1399.98px : Desktop vừa */
+@media (max-width: 1400px) {
+  h1 {
+    font-size: 7rem;
+    transform: translateY(-20px);
+  }
+  h4 {transform: translateY(-15px);}
+  .wedding-banner-img {margin-top: 15px;}
+  .simply-countdown > .simply-section {
+      width: 45px;
+      height: 45px;
+      padding: 50px;
+      margin: 5px;
+      transform: translateY(-5px);
+  }
+  .btn-hero { margin-top: 10px; }
+  .album-slide .swiper-slide { width: 30%; }
+}
+
+/* <= 1199.98px : Laptop lớn */
 @media (max-width: 1200px) {
-  .home .heart {
-    transform: translateX(-50%) translateY(45px);
-  }
+  /* chỉnh style cho màn hình <= 1199px */
+    h1 {font-size: 6rem;}
+    .wedding-banner-img {margin-top: -30px;}
+    .btn-hero { margin-top: 3.5rem; }
 }
 
-/*RESPONSIVE --> Đang lấy cho cả page*/
-/* laptop */
+/* <= 991.98px : Laptop nhỏ / Tablet xoay ngang */
 @media (max-width: 992px) {
-  html {
-    font-size: 75%;
-  }
+    /* .wedding-names .laptop-display { display: none; }
+    .wedding-names .mobile-display { display: inline; } */
+    h1 {font-size: 5rem;}
 
-  .simply-countdown > .simply-section {
-    padding: 65px;
-  }
-
-  .home .heart {
-    display: none;
-  }
-
-  .timeline::before {
-    left: 60px;
-  }
-
-  .timeline li .timeline-image {
-    left: 15px;
-    margin-left: 45px;
-    top: 16px;
-  }
-
-  .timeline li .timeline-panel {
-    width: calc((100% - 200px));
-    float: right;
-  }
-
-  .timeline li .timeline-panel::before {
-    border-left-width: 0;
-    border-right-width: 15px;
-    left: -15px;
-    right: auto;
-  }
-
-  .timeline li .timeline-panel::after {
-    border-left-width: 0;
-    border-right-width: 14px;
-    left: -13px;
-    right: auto;
-  }
+    .timeline::before { left: 60px; }
+    .timeline li .timeline-image {
+        left: 15px;
+        margin-left: 45px;
+        top: 16px;
+    }
+    .timeline li .timeline-panel {
+        width: calc((100% - 200px));
+        float: right;
+        /* background-color: rgba(232, 255, 247, 0.75); */
+    }
+    .timeline li .timeline-panel::before {
+        border-left-width: 0;
+        border-right-width: 15px;
+        left: -15px;
+        right: auto;
+    }
+    .timeline li .timeline-panel::after {
+        border-left-width: 0;
+        border-right-width: 14px;
+        left: -13px;
+        right: auto;        
+    }
 }
 
-/* tablet */
+/* <= 767.98px : Tablet dọc */
 @media (max-width: 768px) {
-  html {
-    font-size: 65%;
-  }
+    h1 {font-size: 6rem;}
+    p {font-size: 1rem;}
+    .wedding-names .laptop-display { display: none; }
+    .wedding-names .mobile-display { display: inline; }
 
-  .simply-countdown > .simply-section {
-    padding: 60px;
-    margin: 5px;
-  }
+    .hero::before { background-position: 85% center; }
 
-  .mynavbar .nav-link {
-    font-size: 2rem;
-    text-align: right;
-  }
+    /*Wedding Card*/
+    .cards-container { display: block; }
+    .desktop-only { display: none; }
+    .mobile-only {
+        display: flex;
+        width: 400px;   /* giữ cố định 400px */
+        margin: 0 auto 10px;
+    }
+    .home { background-image: url(../../assets/picture/background/hoang-xuan-5.JPG); }
+    .home::before {background: rgba(255, 255, 255, 0.8);}
 
-  .sticky-top {
-    overflow: hidden;
-  }
 
-  .timeline li .timeline-image {
-    width: 140px;
-    height: 140px;
-  }
+    /* ============ Home page =======================================*/
+    .home {
+        padding-top: 12rem;
+        padding-bottom: 3rem; 
+    }
+    .invite-time .laptop-display { display: none; }
+    .invite-time .mobile-display { 
+        font-family: 'HILLDA', sans-serif;
+        display: inline;
+        font-size: 21px; 
+    }
+    .p-event .laptop-display { display: none; }
+    .p-event .mobile-display { 
+        display: inline;
+        font-size: 18px; 
+    }
+    .home h3 { font-size: 30px; }
+    .home .couple { 
+        margin-top: 45px; 
+        justify-content: space-between;
+        gap: 40px;
+    }
+    .home .couple h3 { font-size: 2rem; }
+    .home .couple h3 .title-name {
+        margin-top: 20px; /* trước là 50px */
+        font-size: 2.7rem;
+    }
+    .home .heart {
+        transform: translateX(-50%) translateY(180px); /* dịch lên cao hơn */
+        z-index: 2; /* để nổi trên */
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+        width: 100px;
+        height: 100px;
+        overflow: visible;
+    }
+    .heart-inner {
+        width: 100%; /*Chỉnh kích thước ảnh*/
+        height: auto;
+        position: relative;
+        transform: translateY(-15px);
+    }
+    .home .address { font-size: 1.1rem; }
+    /*==================================================*/
+
+    .wedding-page { background-position: 63% center; }
+    .card-wrapper {
+        display: none;
+        width: 400px;   /* giữ cố định 400px */
+        margin: 0 auto;
+    }
+    .card-wrapper.active { display: block; }
+    /* GIỮ NGUYÊN cấu trúc 2 cột Nhà Trai / Nhà Gái */
+    .family-info {
+        flex-direction: row;  /* ép về hàng ngang */
+        gap: 40px;
+    }
+
+    .story {padding-top: 3rem;}
+    .timeline li .timeline-image {
+        width: 140px;
+        height: 140px;
+    }
+    .album-slide .swiper-slide { width: 55%; }
+
+    .video-wrapper { margin-top: 100px; } 
+
+    #giftModal .modal-dialog { margin: 1rem; } 
 }
 
-/* mobile phone */
+/* <= 575.98px : Mobile */
 @media (max-width: 576px) {
-  html {
-    font-size: 60%;
-  }
+    /*Main page & Home page*/
+    h1 {font-size: 5.5rem;}
+    h2 {font-size: 2.7rem;}
+    p {font-size: 0.8rem;}
+    /* .wedding-names .laptop-display { display: none; }
+    .wedding-names .mobile-display { display: inline; } */
+    /*Phần countdown*/
+    .simply-countdown > .simply-section {
+        width: 25px;
+        height: 25px;
+        padding: 40px;
+        margin: 5px;
+    }
+    .hero::before {
+        background-position: 85% center;
+    }
+    .simply-countdown > .simply-section .simply-amount {
+        font-size: 2.0rem;
+    }
+    .wedding-banner-img {
+        width: 55%; /* hoặc giá trị bạn thấy phù hợp như 300px */
+        margin-top: -30px;
+        margin-bottom: 20px;
+    }
+    .hero h4 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-size: 1.6rem;
+    }
+    /*Menu bar*/
+    .mynavbar .offcanvas-title { font-size: 30px; }
+    .mynavbar .offcanvas {
+        width: 200px;
+        right: 0 !important;  /*Ép sang bên phải*/
+        left: auto !important; /*Bỏ override mặc định về bên trái*/
+    }
+    .mynavbar .offcanvas-body .navbar-nav { text-align: right; }
+    .mynavbar .nav-link {
+        display: block;
+        text-align: right;
+    }
+    .btn-hero { margin-top: 3.5rem; }
+    /*Home page*/
+    .invite-time .mobile-display { font-size: 18px; }
+    .p-event .mobile-display { font-size: 15px; }
+    .home .couple { gap: 100px; }
+    .home .couple h3 { font-size: 1.7rem; }
+    .home .couple h3 .title-name { font-size: 2.3rem; }
+    .home .address { font-size: 0.8rem; }
+    .home .heart {
+        transform: translateX(-50%) translateY(150px); /* dịch lên cao hơn */
+        width: 90px;
+        height: 90px;
+    }
+    .heart-inner {
+        transform: translateY(-10px);
+    }
+    /*Cắt đi từ đây*/
 
-  .simply-countdown > .simply-section {
-    padding: 45px;
-    margin: 3px;
-  }
+    .story h3 {font-size: 1.5rem; }
+    .story span {font-size: 0.75rem; }
+    .story .parag {font-size: 0.9rem;}
+    .timeline li .timeline-image {
+        width: 80px;
+        height: 80px;
+    }
+    .timeline li .timeline-panel {
+        width: 65%;
+        transform: translateX(-20px);
+        padding: 1.5rem;
+        /* background-color: rgba(232, 255, 247, 0.65); */
+    }
+    .timeline li .timeline-panel::before { top: 30px; }
+    .timeline li .timeline-panel::after { top: 31px; }
+    
+    .album-slide .swiper-slide { width: 70%; }
 
-  .timeline li .timeline-image {
-    width: 80px;
-    height: 80px;
-  }
+    .video-wrapper { margin-top: 150px; }
 
-  .timeline li .timeline-panel {
-    width: 65%;
-    transform: translateX(-20px);
-  }
-
-  .timeline li .timeline-panel::before {
-    top: 30px;
-  }
-
-  .timeline li .timeline-panel::after {
-    top: 31px;
-  }
+    footer .title { font-size: 0.8rem; }
 }
 
-/*RESPONSIVE CHO PHẦN WEDDING CARD --> Có thể sẽ bị xung đột với phần trên, kiểm lại*/
-/* =================== MOBILE =================== */
-@media (max-width: 840px) {
-  .cards-container {
-    display: block;
-  }
-
-  .desktop-only {
-    display: none;
-  }
-
-  .mobile-only {
-    display: flex;
-    width: 400px;   /* giữ cố định 400px */
-    margin: 0 auto 10px;
-  }
-
-  .card-wrapper {
-    display: none;
-    width: 400px;   /* giữ cố định 400px */
-    margin: 0 auto;
-  }
-  .card-wrapper.active {
-    display: block;
-  }
-
-  /* GIỮ NGUYÊN cấu trúc 2 cột Nhà Trai / Nhà Gái */
-  .family-info {
-    flex-direction: row;  /* ép về hàng ngang */
-    gap: 40px;
-  }
+/* <= 375px : Mobile rất nhỏ (tuỳ chọn thêm) */
+@media (max-width: 375px) {
+  /* chỉnh style cho màn hình rất nhỏ */
 }
-
-/*Một phần responsitive nữa*/
-@media only screen and (min-width: 540px) {}
-
-/* Medium devices such as tablets (768px and up) */
-@media only screen and (min-width: 768px) {
-    .bg-top-left, .bg-bottom-right {
-        max-width: 300px;
-    }
-    .about-container {
-        grid-template-columns: repeat(2,1fr);
-    }
-    #time-line .section-title{
-        font-size: 54px;
-    }
-    .album-slide .swiper-slide {
-        width: 30%;
-    }
-}
-
-/* Large devices such as laptops (1024px and up) */
-@media only screen and (min-width: 1024px) {}
-
-/* Largest devices such as desktops (1280px and up) */
-@media only screen and (min-width: 1280px) {}
