@@ -1,7 +1,5 @@
 /* === NHỮNG NGUỒN IMPORT TỪ BÊN NGOÀI, PHẦN CÀI ĐẶT DÙNG CHUNG === */
-/* @import url('fonts.css'); */
-@import url('keyframes.css');
-
+/* @import url('keyframes.css'); */
 :root {
   --pink: #f14e95;
   --black : #181818;
@@ -14,27 +12,27 @@
 body {
   font-size: 1.2rem;
   font-family: 'Work Sans', sans-serif;
-  min-height: 4000px;
+  min-height: 100vh;
 }
 /*Cài đặt các Heading dùng chung cho toàn website*/
 h1 {
   font-family: 'UVF-Filxgirl', cursive;
-  font-size: 9rem;
+  font-size: 9rem; /*9rem = 9 * 16px = 144px*/
   color: var(--primary-color);
   text-shadow: var(--shadow);
   font-weight: bold;
 }
 h2 {
-  color: var(--pink);
+  color: var(--primary-color);
   font-family: 'West-Condensed', fantasy;
-  font-size: 4rem;
+  font-size: 3.5rem; /*4rem = 4 * 16px = 64px*/
   font-weight: bold;
   text-shadow: var(--shadow);
 }
 p {
   color: var(--black);
   font-family: 'HILLDA', serif;
-  font-size: 18px;
+  font-size: 1.15rem; /*18px = 1.125rem = 1.15rem hoặc 1.2rem*/
   margin-top: 5px;
   margin-bottom: -3px;
   text-shadow: var(--shadow);
@@ -75,7 +73,7 @@ p {
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
   text-shadow: var(--shadow);
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 .hero a {
   color: var(--pink);
@@ -86,6 +84,30 @@ p {
 .hero a:hover {
   background-color: var(--pink);
   color: var(--white);
+}
+/*Ảnh banner - Chữ Lễ Thành Hôn*/
+.wedding-banner-img {
+  border: none;
+  margin: 30px;
+  width: 350px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*Nút bấm*/
+.btn-hero{
+  display: inline-block;
+  padding: 14px 28px;     /* btn-lg */
+  font-size: 1.25rem;     /* btn-lg */
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.3rem;  /* btn */
+  cursor: pointer;
+  margin-top: 1.5rem;     /* mt-4 */
 }
 /*Phần countdown*/
 .simply-countdown {
@@ -118,25 +140,39 @@ p {
 /*Phần menu*/
 .mynavbar {
   background-color: rgba(255, 255, 255, 0.3) !important;
-  backdrop-filter: blur(4px);
+  /* backdrop-filter: blur(4px); */
 }
 .mynavbar .offcanvas {
   height: 100vh;
+  width: 200px;
 }
 .mynavbar .navbar-brand,
 .mynavbar .offcanvas-title {
   font-family: 'UVF-Filxgirl', cursive;
   font-size: 35px;
-  font-weight: bold;
+  font-weight: bolder;
+}
+.mynavbar .offcanvas-body .navbar-nav {
+  text-align: right;     /* chữ dạt về bên phải */
 }
 .mynavbar .nav-link {
   font-family: 'PoetsenOne', cursive;
   text-transform: none; /*Đây biến chữ thường thành chữ in hoa*/
   color: #333;
   transition: color 0.3s ease; /*Hiệu ứng chuyển màu*/
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  /* display: block;
+  text-align: right; Căn chữ về bên phải */
+
 }
 .mynavbar .nav-link:hover {
   color: #e91e63; /* Màu khi hover – hồng đậm. Bạn có thể đổi mã màu */
+  background-color: rgba(233, 30, 99, 0.1); /* Nền nhạt màu hồng */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Hiệu ứng nổi */
+  transform: translateY(-2px); /* Nổi nhẹ lên trên */
 }
 /* === KẾT THÚC STYLE PHẦN HERO PAGE === */
 
@@ -168,15 +204,16 @@ p {
   margin-bottom: 12px;
 }
 .home h3 {
-  font-family: 'PHOBIA', serif;
+  font-family: 'Autogate-Stamp', serif;
   color: rgb(43, 43, 255);
-  font-size: 35px;
+  font-size: 40px;
   margin-bottom: 15px;
   text-shadow: var(--shadow);
 }
 .home .p-event {
-  font-family: 'ED-Lavonia', sans-serif;
-  font-size: 1.6rem;
+  /* font-family: 'ED-Lavonia', sans-serif; */
+  font-family: 'HILLDA', sans-serif;
+  font-size: 1.2rem;
   color: #1f1c1c;
 }
 .home .couple {
@@ -198,8 +235,8 @@ p {
   /* text-shadow: var(--shadow); */
 }
 .home .address {
-  font-family: 'Autogate-Stamp', sans-serif;
-  font-size: 1.5rem;
+  font-family: 'PoetsenOne', sans-serif;
+  font-size: 1.0rem;
   color: #0f1cd1;
   text-shadow: var(--shadow);
 }
@@ -226,11 +263,6 @@ p {
   margin-top: 5px;
   margin-left: -6px;
 }
-/* @media (max-width: 1200px) {
-  .home .heart {
-    transform: translateX(-50%) translateY(45px);
-  }
-} */
 /* === KẾT THÚC STYLE PHẦN SỰ KIỆN === */
 
 /* 3. STYLE CHO PHẦN THIỆP CƯỚI (WEDDING CARD) */
@@ -285,7 +317,7 @@ p {
   margin-bottom: 20px;
   color: #962e2e;
   font-family: 'Wagon-ExtraLight', cursive;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bolder;
 }
 .wedding-card .invite-text {
@@ -345,9 +377,11 @@ p {
   margin-bottom: 10px;
 }
 .card-selector {
+  white-space: nowrap;
+  font-size: 16px;
   flex: 1;
   text-align: center;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #aaa;
   border-radius: 6px;
   background: #f9f5f0;
@@ -365,7 +399,7 @@ p {
   background: linear-gradient(135deg, #d83a2e, #f59e0b);
   color: var(--white);
   font-weight: bold;
-  transform: scale(1.05); /* hơi to lên */
+  transform: scale(1.03); /* hơi to lên */
 }
 .card-image {
   margin: 0px 0;
@@ -440,7 +474,7 @@ p {
 /* Dòng trên (CHỦ NHẬT) */
 .date-top {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   margin-top: -10px;
   margin-bottom: -20px;
   font-family: 'PoetsenOne', serif;
@@ -452,7 +486,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 25px; /* khoảng cách giữa số và chữ */
+  gap: 20px; /* khoảng cách giữa số và chữ */
   min-height: 60px;
 }
 /* Bên trái & phải */
@@ -461,7 +495,7 @@ p {
   flex-direction: column;
   justify-content: center; /* căn chữ giữa chiều cao */
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   text-align: center;
   line-height: 1.4;
@@ -471,7 +505,7 @@ p {
 .date-side span {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   display: block;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: bold;
 }
 /* Gạch phân cách dọc */
@@ -486,7 +520,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  font-size: 40px;
+  font-size: 37px;
   font-weight: 900;
   color: #b22222;
   margin: 0 10px;
@@ -498,7 +532,7 @@ p {
   /* margin-bottom: 0px; */
   font-family: 'VLFADILLA', serif;
   font-style: italic;
-  font-size: 20px;
+  font-size: 22px;
   color: blue;
 }
 .local-text {
@@ -511,6 +545,7 @@ p {
   margin-bottom: 8px;
   line-height: 1;
   font-family: 'Indulge-Script', sans-serif;
+  /* font-family: 'HILLDA', cursive; */
   font-size: 15px;
   font-weight: bold;
 }
@@ -579,20 +614,20 @@ p {
 .story h3 {
   font-family: 'ED-Piedmont', serif;
   color: #d10cf8;
-  font-size: 25px;
+  font-size: 1.85rem;
   text-decoration: underline;
   margin-top: -10px;
 }
 .story span {
-  font-family: 'Autogate-Stamp', cursive;
-  font-size: 16px;
+  font-family: 'PoetsenOne', cursive;
+  font-size: 0.9rem;
   font-weight: bolder;
   margin-bottom: 0px;
   color: #0f1cd1;
 }
 .story .parag {
-  font-family: 'VLFADILLA', cursive;
-  font-size: 22px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
   color: purple;
   text-shadow: var(--shadow);
 }
@@ -643,7 +678,8 @@ p {
   padding: 2rem;
   position: relative;
   border-radius: 8px;
-  background-color: #e8fff7;
+  /* background-color: #e8fff7; */
+  background-color: rgba(232, 255, 247, 0.75);
 }
 .timeline li .timeline-panel::before {
   content: '';
@@ -731,7 +767,7 @@ p {
 .album-slide .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 30%; /*Chuyển giả về 50% để hiển thị trên các thiết bị có màn lơn hơn 768px*/
+    width: 50%; /*Chuyển giả về 50% để hiển thị trên các thiết bị có màn lơn hơn 768px*/
     height: auto;
 }
 .album-slide .swiper-slide img {
@@ -814,8 +850,9 @@ p {
   z-index: 1;
 }
 .message-wish p {
-  color: lightgreen;
+  color: var(--message-title);
   margin-top: -10px;
+  text-shadow: var(--shadow);
 }
 .message-box {
   max-width: 350px;
@@ -846,13 +883,13 @@ p {
   text-shadow: var(--shadow);
   font-weight: bold;
   font-size: 20px;
+  text-align: left;
 }
 .form-title {
   font-size: 27px;
   color: var(--message-title);
   font-weight: bold;
   text-shadow: var(--shadow);
-  text-decoration: underline;
 }
 .form-style {
   border: 1px;
@@ -1035,12 +1072,6 @@ p {
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
-/* .qr-buttons .btn:hover {
-  background-color: #007bff;
-  color: var(--white);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-} */
 .qr-row-wrapper {
   display: flex;
   justify-content: center;
@@ -1066,15 +1097,6 @@ p {
 #giftModal .modal-dialog {
   max-width: 570px; /* tùy chỉnh độ rộng khung ngoài cùng */
 }
-
-@media (max-width: 768px) {
-  /*.qr-buttons {
-    flex-direction: column;
-  }*/
-  #giftModal .modal-dialog {
-    margin: 1rem; /* giữ responsive trên mobile */
-  } 
-}
 /* === KẾT THÚC STYLE PHẦN MỪNG CƯỚI === */
 
 /* === 9. PHẦN FOOTER === */
@@ -1089,7 +1111,7 @@ footer .title {
   font-weight: 600;
   line-height: 1.6;
   margin-top: 0px;
-  color: rgb(43, 253, 54); /* hoặc màu khác nếu muốn nổi bật */
+  color: rgb(212, 255, 215); /* hoặc màu khác nếu muốn nổi bật */
   text-shadow: var(--shadow);
 }
 footer a {
@@ -1140,7 +1162,7 @@ footer li {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   display: inline-block;
-  background: #c6ff6b;   /* nền đỏ đô */
+  background: #c6ff6b;   /* nền đỏ */
   color: #000000;           /* chữ trắng */
   padding: 12px 24px;
   border-radius: 6px;
@@ -1166,4 +1188,35 @@ footer li {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(216, 58, 46, 0);
   }
+}
+
+/*KEYFRAMS CỦA WEDDING CARD*//* Keyframes tạo rung */
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-1px, 0) rotate(-2deg); }
+  40% { transform: translate(1px, 0) rotate(2deg); }
+  60% { transform: translate(-1px, 0) rotate(-1deg); }
+  80% { transform: translate(1px, 0) rotate(1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Tạo hiệu ứng rung cho nút nhấn (phần chọn card khi hiển thị mobile) */
+@keyframes pulse-card {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(216, 58, 46, 0.6); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(216, 58, 46, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(216, 58, 46, 0); }
+}
+/* Keyframes: kết hợp rung và phóng to (điện thoại và map)*/
+@keyframes pulse-shake {
+  0%   { transform: scale(1) rotate(0deg); }
+  10%  { transform: scale(1.1) rotate(-3deg); }
+  20%  { transform: scale(1.1) rotate(3deg); }
+  30%  { transform: scale(1.2) rotate(-2deg); }
+  40%  { transform: scale(1.2) rotate(2deg); }
+  50%  { transform: scale(1.1) rotate(0deg); }
+  60%  { transform: scale(1.2) rotate(-3deg); }
+  70%  { transform: scale(1.2) rotate(3deg); }
+  80%  { transform: scale(1.1) rotate(-2deg); }
+  90%  { transform: scale(1.05) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); }
 }
